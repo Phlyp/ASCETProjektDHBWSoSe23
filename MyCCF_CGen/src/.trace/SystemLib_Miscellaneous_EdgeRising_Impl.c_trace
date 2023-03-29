@@ -1,0 +1,3 @@
+2016 = platform:/resource/SystemLib/SystemLib/Miscellaneous/EdgeRising.esdl#esdlLink_PackageDecl;;SystemLib.Miscellaneous/ClassType;definitions.0;EdgeRising/MethodDecl;parts.2;compute/StatementBlock;block;/SimpleAssign;statements.1;
+1971 = platform:/resource/SystemLib/SystemLib/Miscellaneous/EdgeRising.esdl#esdlLink_PackageDecl;;SystemLib.Miscellaneous/ClassType;definitions.0;EdgeRising/MethodDecl;parts.2;compute/StatementBlock;block;/SimpleAssign;statements.0;
+2858 = platform:/resource/SystemLib/SystemLib/Miscellaneous/EdgeRising.esdl#esdlLink_PackageDecl;;SystemLib.Miscellaneous/ClassType;definitions.0;EdgeRising/MethodDecl;parts.3;value/StatementBlock;block;/ReturnStatement;statements.0;

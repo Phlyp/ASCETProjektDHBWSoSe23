@@ -1,0 +1,5 @@
+1958 = platform:/resource/MyCCF/myCar/SplitSignal.esdl#esdlLink_PackageDecl;;myCar/ClassType;definitions.0;SplitSignal/MethodDecl;parts.3;calc/StatementBlock;block;/IfStatement;statements.0;/StatementBlock;elseBlock;/SimpleAssign;statements.1;
+1864 = platform:/resource/MyCCF/myCar/SplitSignal.esdl#esdlLink_PackageDecl;;myCar/ClassType;definitions.0;SplitSignal/MethodDecl;parts.3;calc/StatementBlock;block;/IfStatement;statements.0;/StatementBlock;ifBlock;/SimpleAssign;statements.0;
+1933 = platform:/resource/MyCCF/myCar/SplitSignal.esdl#esdlLink_PackageDecl;;myCar/ClassType;definitions.0;SplitSignal/MethodDecl;parts.3;calc/StatementBlock;block;/IfStatement;statements.0;/StatementBlock;elseBlock;/SimpleAssign;statements.0;
+1790 = platform:/resource/MyCCF/myCar/SplitSignal.esdl#esdlLink_PackageDecl;;myCar/ClassType;definitions.0;SplitSignal/MethodDecl;parts.3;calc/StatementBlock;block;/IfStatement;statements.0;
+1887 = platform:/resource/MyCCF/myCar/SplitSignal.esdl#esdlLink_PackageDecl;;myCar/ClassType;definitions.0;SplitSignal/MethodDecl;parts.3;calc/StatementBlock;block;/IfStatement;statements.0;/StatementBlock;ifBlock;/SimpleAssign;statements.1;

@@ -1,0 +1,5 @@
+2114 = platform:/resource/MyCCF/myCar/myBattery.esdl#esdlLink_PackageDecl;;myCar/ClassType;definitions.0;myBattery/MethodDecl;parts.5;get_battery/StatementBlock;block;/SimpleAssign;statements.0;
+2163 = platform:/resource/MyCCF/myCar/myBattery.esdl#esdlLink_PackageDecl;;myCar/ClassType;definitions.0;myBattery/MethodDecl;parts.5;get_battery/StatementBlock;block;/SimpleAssign;statements.1;
+2196 = platform:/resource/MyCCF/myCar/myBattery.esdl#esdlLink_PackageDecl;;myCar/ClassType;definitions.0;myBattery/MethodDecl;parts.5;get_battery/StatementBlock;block;/SimpleAssign;statements.2;
+2388 = platform:/resource/MyCCF/myCar/myBattery.esdl#esdlLink_PackageDecl;;myCar/ClassType;definitions.0;myBattery/MethodDecl;parts.5;get_battery/StatementBlock;block;/ReturnStatement;statements.4;
+2247 = platform:/resource/MyCCF/myCar/myBattery.esdl#esdlLink_PackageDecl;;myCar/ClassType;definitions.0;myBattery/MethodDecl;parts.5;get_battery/StatementBlock;block;/SimpleAssign;statements.3;

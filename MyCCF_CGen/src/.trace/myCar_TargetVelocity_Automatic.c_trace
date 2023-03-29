@@ -1,0 +1,5 @@
+2644 = platform:/resource/MyCCF/myCar/TargetVelocity.esdl#esdlLink_PackageDecl;;myCar/ClassType;definitions.0;TargetVelocity/MethodDecl;parts.4;inc/StatementBlock;block;/SimpleAssign;statements.0;
+4388 = platform:/resource/MyCCF/myCar/TargetVelocity.esdl#esdlLink_PackageDecl;;myCar/ClassType;definitions.0;TargetVelocity/MethodDecl;parts.6;velocity/StatementBlock;block;/SimpleAssign;statements.0;
+4500 = platform:/resource/MyCCF/myCar/TargetVelocity.esdl#esdlLink_PackageDecl;;myCar/ClassType;definitions.0;TargetVelocity/MethodDecl;parts.6;velocity/StatementBlock;block;/ReturnStatement;statements.1;
+1849 = platform:/resource/MyCCF/myCar/TargetVelocity.esdl#esdlLink_PackageDecl;;myCar/ClassType;definitions.0;TargetVelocity/MethodDecl;parts.5;dec/StatementBlock;block;/SimpleAssign;statements.0;
+3533 = platform:/resource/MyCCF/myCar/TargetVelocity.esdl#esdlLink_PackageDecl;;myCar/ClassType;definitions.0;TargetVelocity/MethodDecl;parts.7;reset/StatementBlock;block;/SimpleAssign;statements.0;
