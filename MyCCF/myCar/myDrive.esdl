@@ -43,8 +43,10 @@ class myDrive {
 	BatteryState BatteryState_instance;
 	@get
 	private real power;
+	@get
+	m totalDist;
 
-	@generated("blockdiagram", "52de683e")
+	@generated("blockdiagram", "21992957")
 	public void move(real in powerCtrl, real in brakeCtrl, s in mydt, g in myg, real in recupCtrl) {
 		v = (((BrakeMomentum.getAt(brakeCtrl) + momentum + AirFriction.getAt(v) + recup_momentum + (myg * (dh / ds))) * mydt) + v); // Main/move 1
 		if (v < 0.0[kmh]) {
@@ -70,5 +72,6 @@ class myDrive {
 		recupMult = BatteryState_instance.recupMult; // Main/move 14
 		noRecupPossible = BatteryState_instance.noRecupPossible; // Main/move 15
 		power = BatteryState_instance.powerOverride; // Main/move 16
+		totalDist = (ds + dist); // Main/move 17
 	}
 }

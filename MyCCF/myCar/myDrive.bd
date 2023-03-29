@@ -2,7 +2,7 @@ classType myCar.myDrive
 blockdiagramSpecification Main {
 	methodBody move {
 		outPin active {
-			connection_29, connection_81, connection_56, connection_91, connection_2, connection_48, connection_36, connection_100, connection_152, connection_178, connection_184, connection_182, connection_181, connection_186, connection_190, connection_192
+			connection_29, connection_81, connection_56, connection_91, connection_2, connection_48, connection_36, connection_100, connection_152, connection_178, connection_184, connection_182, connection_181, connection_186, connection_190, connection_192, connection_195
 		}
 	}
 	simpleIdentifier BrakeMomentum at (181, 31) {
@@ -204,7 +204,7 @@ blockdiagramSpecification Main {
 		}
 		sequenceCall at (-10, -14) {
 			inPin connection_16 {
-				bendpoints (120, 0), (120, 80), (-420, 80), (-420, 180)
+				bendpoints (120, 0), (120, 70), (-420, 70), (-420, 180)
 			}
 		}
 	}
@@ -223,7 +223,7 @@ blockdiagramSpecification Main {
 			bendpoints (20, 0), (20, 40), (-130, 40), (-130, 10)
 		}
 		outPin {
-			connection_17
+			connection_196, connection_17
 		}
 	}
 	simpleIdentifier dist at (531, 405) {
@@ -611,6 +611,15 @@ blockdiagramSpecification Main {
 		}
 		sequenceCall {
 			inPin
+		}
+	}
+	simpleIdentifier totalDist at (371, 515) {
+		label at (0, -1)
+		inPin connection_196 {
+			bendpoints (10, 0)
+		}
+		outPin sequenceCall {
+			inPin connection_195
 		}
 	}
 }
