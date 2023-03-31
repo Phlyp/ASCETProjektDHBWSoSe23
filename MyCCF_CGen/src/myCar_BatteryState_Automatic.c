@@ -56,11 +56,6 @@ void myCar_BatteryState_Automatic_batteryStateStatemachineTrigger ( const struct
    switch (sm_VAL)
    {
       case BatteryEmpty:
-         if (battery_VAL > 0.0F)
-         {
-            sm_VAL = crawlModeState;
-            break;
-         } /* end if */
          powerOverride_VAL = 0.0F;
          break;
       case BatteryFull:

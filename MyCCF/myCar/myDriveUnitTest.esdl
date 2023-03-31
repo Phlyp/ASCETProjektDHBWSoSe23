@@ -24,8 +24,8 @@ static class myDriveUnitTest {
 	real move_powerCtrl = 42.0;
 	real move_brakeCtrl = 0.0;
 	real move_recupCtrl = 0.0;
-	characteristic s move_mydt = 0.1[s];
-	characteristic g move_myg = 9.81[g];
+	characteristic s move_mydt = 0.01[s];
+	characteristic g move_myg = 1.0[g];
 	s time = 0.0 [s];
 	
 	// CCF variables
@@ -49,12 +49,13 @@ static class myDriveUnitTest {
 	characteristic real brake = -30.0;
 	characteristic real power = 50.0;
 	characteristic boolean withRecup = true;
+	real pw;
 	real br;
 	characteristic real c = 0.0;
 	PI PI_instance;
 	characteristic boolean useSilly = false;
 
-	@Test
+//	@Test
 	public void move() {
 		while (tester.v < 20.0 [kmh]) {
 			tester.move(move_powerCtrl, move_brakeCtrl, move_mydt, move_myg, move_recupCtrl);	
@@ -65,25 +66,96 @@ static class myDriveUnitTest {
 	}
 	@Test
 	public void testSillyDistance() {
+		kmh savedSpeed = 0.0 [kmh];
+		// get moving
 		tester.move(10.0, move_brakeCtrl, move_mydt, move_myg, move_recupCtrl);
 		tester.move(10.0, move_brakeCtrl, move_mydt, move_myg, move_recupCtrl);
 		
+		logger.log(888001.0, 0.0);
+		
+		// accelerate with move_powercontrol until speed of 70kmh is reached
 		while (tester.v < 70.0 [kmh]) {
 			tester.move(move_powerCtrl, move_brakeCtrl, move_mydt, move_myg, move_recupCtrl);
+//			logger.log(tester.v / 1.0 [kmh], tester.dh / 1.0[m]);
 		}
+		savedSpeed = tester.v;
+		// activate CCF until battery is under crawling capacity
 		while (tester.battery > 0.0011 [kWh]) {
-			tester.move(sillyController(tester.v), move_brakeCtrl, move_mydt, move_myg, move_recupCtrl);
+			// CCFStateMachine model
+			real ctrl = sillyController(tester.v, savedSpeed);
+			if (ctrl > 0.0) {
+				pw = ctrl;
+				br = 0.0;
+			} else {
+				pw = 0.0;
+				br = - ctrl;
+			}
+			//accelerate or use eddy current brake depending on CCFStateMachine
+			tester.move(pw, move_brakeCtrl, move_mydt, move_myg, br);
+//			logger.log(tester.power, tester.battery / 1.0 [kWh]);
 		}
+		logger.log(tester.totalDist / 1.0[m], tester.battery / 1.0 [kWh]);
+		// coast until walking speed is reached
+		while (tester.v > 7.0 [kmh]) {
+			tester.move(0.0, move_brakeCtrl, move_mydt, move_myg, move_recupCtrl);
+		}
+		logger.log(tester.totalDist / 1.0[m], tester.battery / 1.0 [kWh]);
+		// activate crawling mode
 		while (tester.battery > 0.0 [kWh]) {
 			tester.move(100.0, move_brakeCtrl, move_mydt, move_myg, move_recupCtrl);
+//			logger.log(tester.totalDist / 1.0[m], tester.battery / 1.0 [kWh]);
 		}
 		logger.log(tester.totalDist / 1.0[m], tester.battery / 1.0 [kWh]);
 		
 	}
-	
-	real sillyController(kmh currentSpeed) {
+	@Test
+	public void testPIDistance() {
+		kmh savedSpeed = 0.0 [kmh];
+		// get moving
+		tester.move(move_powerCtrl, move_brakeCtrl, move_mydt, move_myg, move_recupCtrl);
+		tester.move(move_powerCtrl, move_brakeCtrl, move_mydt, move_myg, move_recupCtrl);
 		
-		TVI.reset(currentSpeed); 
+		logger.log(888002.0, 0.0);
+		
+		// accelerate with move_powercontrol until speed of 70kmh is reached
+		while (tester.dist < 120.0 [m]) {
+			tester.move(move_powerCtrl, move_brakeCtrl, move_mydt, move_myg, move_recupCtrl);
+//			logger.log(tester.dh / 1.0 [m], tester.ds / 1.0[m]);
+		}
+		savedSpeed = tester.v;
+		// activate CCF until battery is under crawling capacity
+		while (tester.battery > 0.0011 [kWh]) {
+			// CCFStateMachine model
+			real ctrl = PIController(tester.v, savedSpeed);
+			if (ctrl > 0.0) {
+				pw = ctrl;
+				br = 0.0;
+			} else {
+				pw = 0.0;
+				br = - ctrl;
+			}
+			//accelerate or use eddy current brake depending on CCFStateMachine
+			tester.move(pw, move_brakeCtrl, move_mydt, move_myg, br);
+//			logger.log(tester.dist / 1.0 [m], tester.totalDist / 1.0[m]);
+		}
+		logger.log(tester.totalDist / 1.0[m], tester.battery / 1.0 [kWh]);
+		// coast until walking speed is reached
+		while (tester.v > 7.0 [kmh]) {
+			tester.move(0.0, move_brakeCtrl, move_mydt, move_myg, move_recupCtrl);
+		}
+		logger.log(tester.totalDist / 1.0[m], tester.battery / 1.0 [kWh]);
+		// activate crawling mode
+		while (tester.battery > 0.0 [kWh]) {
+			tester.move(100.0, move_brakeCtrl, move_mydt, move_myg, move_recupCtrl);
+//			logger.log(tester.totalDist / 1.0[m], tester.battery / 1.0 [kWh]);
+		}
+		logger.log(tester.totalDist / 1.0[m], tester.battery / 1.0 [kWh]);
+	}
+	
+	
+	real sillyController(kmh currentSpeed, kmh desiredSpeed) {
+		
+		TVI.reset(desiredSpeed); 
 		if (currentSpeed > TVI.velocity()) {
 			ctl = brake; 
 		} else {
@@ -93,7 +165,10 @@ static class myDriveUnitTest {
 		return ctl;
 	}
 	
-	real PIController(kmh speed, kmh newSpeed) {
-		return 0.0;
+	real PIController(kmh currentSpeed, kmh desiredSpeed) {
+		TVI.reset(desiredSpeed);
+		PI_instance.compute(((currentSpeed - TVI.velocity()) / 1.0[kmh]), K, TN);
+		ctl = min(100.0, max(PI_instance.value(), -100.0));
+		return ctl;
 	}
 }

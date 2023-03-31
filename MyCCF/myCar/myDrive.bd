@@ -2,7 +2,7 @@ classType myCar.myDrive
 blockdiagramSpecification Main {
 	methodBody move {
 		outPin active {
-			connection_29, connection_81, connection_56, connection_91, connection_2, connection_48, connection_36, connection_100, connection_152, connection_178, connection_184, connection_182, connection_181, connection_186, connection_190, connection_192, connection_195
+			connection_29, connection_81, connection_56, connection_91, connection_210, connection_2, connection_48, connection_36, connection_100, connection_152, connection_178, connection_184, connection_182, connection_181, connection_186, connection_190, connection_192
 		}
 	}
 	simpleIdentifier BrakeMomentum at (181, 31) {
@@ -190,21 +190,21 @@ blockdiagramSpecification Main {
 		label at (10, -1)
 		inPin connection_57
 		outPin {
-			connection_45, connection_44
+			connection_45, connection_202, connection_44
 		}
 		sequenceCall at (-10, -14) {
 			inPin connection_56
 		}
 	}
-	simpleIdentifier dist at (391, 495) {
+	simpleIdentifier dist at (401, 495) {
 		label at (20, -1)
 		inPin connection_17
 		outPin {
-			connection_13
+			connection_201
 		}
 		sequenceCall at (-10, -14) {
 			inPin connection_16 {
-				bendpoints (120, 0), (120, 70), (-420, 70), (-420, 180)
+				bendpoints (120, 0), (120, 70), (-410, 70), (-410, 180)
 			}
 		}
 	}
@@ -219,11 +219,11 @@ blockdiagramSpecification Main {
 	}
 	addition at (321, 486) {
 		inPin connection_44
-		inPin connection_13 {
-			bendpoints (20, 0), (20, 40), (-130, 40), (-130, 10)
+		inPin connection_201 {
+			bendpoints (20, 0), (20, 30), (-140, 30), (-140, 10)
 		}
 		outPin {
-			connection_196, connection_17
+			connection_17
 		}
 	}
 	simpleIdentifier dist at (531, 405) {
@@ -359,7 +359,7 @@ blockdiagramSpecification Main {
 			bendpoints (30, 0), (30, -20)
 		}
 		outPin {
-			connection_92
+			connection_211, connection_92
 		}
 	}
 	literal unit resources.m "0.001" at (571, 333) size (49, 0) {
@@ -367,7 +367,7 @@ blockdiagramSpecification Main {
 			connection_90, connection_86
 		}
 	}
-	simpleIdentifier ds at (841, 345) {
+	simpleIdentifier ds at (781, 345) {
 		label at (10, -1)
 		inPin connection_90 {
 			bendpoints (30, 0), (30, 10)
@@ -397,7 +397,7 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	complexIdentifier myBattery_instance at (221, 561) size (14, 8) {
+	complexIdentifier myBattery_instance at (221, 661) size (14, 8) {
 		label at (0, 1)
 		methodCall myCar.myBattery.get_battery {
 			argumentPin momentum at (left, 0) connection_156
@@ -410,7 +410,7 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	simpleIdentifier momentum at (81, 555) {
+	simpleIdentifier momentum at (81, 655) {
 		label at (0, -1)
 		inPin outPin {
 			connection_157
@@ -419,7 +419,7 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier ds at (141, 595) {
+	simpleIdentifier ds at (141, 695) {
 		label at (0, -1)
 		inPin outPin {
 			connection_143
@@ -428,7 +428,7 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier battery at (411, 565) {
+	simpleIdentifier battery at (411, 665) {
 		label at (0, -1)
 		inPin connection_179
 		outPin {
@@ -499,14 +499,14 @@ blockdiagramSpecification Main {
 			inPin connection_152
 		}
 	}
-	addition at (151, 556) {
+	addition at (151, 656) {
 		inPin connection_157
 		inPin connection_158
 		outPin {
 			connection_156
 		}
 	}
-	simpleIdentifier recup_momentum at (31, 575) {
+	simpleIdentifier recup_momentum at (31, 675) {
 		label at (0, -1)
 		inPin outPin {
 			connection_158
@@ -515,7 +515,7 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier noRecupPossible at (731, 505) {
+	simpleIdentifier noRecupPossible at (731, 605) {
 		label at (0, -1)
 		inPin connection_191 {
 			bendpoints (30, 0), (30, -30)
@@ -524,7 +524,7 @@ blockdiagramSpecification Main {
 			inPin connection_190
 		}
 	}
-	simpleIdentifier recupMult at (731, 565) {
+	simpleIdentifier recupMult at (731, 665) {
 		label at (0, 9)
 		inPin connection_187
 		outPin sequenceCall at (-10, -14) {
@@ -540,10 +540,10 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	complexIdentifier BatteryState_instance at (531, 531) size (14, 8) {
+	complexIdentifier BatteryState_instance at (531, 631) size (14, 8) {
 		label at (0, 1)
 		methodCall myCar.BatteryState.batteryStateStatemachineTrigger {
-			methodVoidPin at (top, 0) sequenceCall at (16, -40) {
+			methodVoidPin at (top, 0) sequenceCall at (36, -50) {
 				inPin connection_181
 			}
 		}
@@ -573,9 +573,9 @@ blockdiagramSpecification Main {
 		}
 		elementCall (myCar.BatteryState.powerInput) {
 			argumentPin at (left, 0) connection_183 {
-				bendpoints (30, 0), (30, 80)
+				bendpoints (80, 0), (80, 30)
 			}
-			sequenceCall at (-20, -34) {
+			sequenceCall at (-30, -64) {
 				inPin connection_182
 			}
 		}
@@ -586,7 +586,7 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	methodArgumentIdentifier move.powerCtrl at (421, 455) {
+	methodArgumentIdentifier move.powerCtrl at (371, 605) {
 		label at (0, -1)
 		outPin {
 			connection_183
@@ -595,7 +595,7 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier power at (731, 615) {
+	simpleIdentifier power at (731, 715) {
 		label at (0, -1)
 		inPin connection_193 {
 			bendpoints (30, 0), (30, 30)
@@ -613,13 +613,38 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier totalDist at (371, 515) {
+	simpleIdentifier totalDist at (561, 505) {
 		label at (0, -1)
-		inPin connection_196 {
-			bendpoints (10, 0)
+		inPin connection_204
+		outPin {
+			connection_205
 		}
-		outPin sequenceCall {
-			inPin connection_195
+		sequenceCall at (-10, -14) {
+			inPin connection_203 {
+				bendpoints (60, 0), (60, 110), (-380, 110), (-380, 190), (-320, 190)
+			}
+		}
+	}
+	addition at (511, 496) {
+		inPin connection_202 {
+			bendpoints (20, 0), (20, 60), (220, 60), (220, 10)
+		}
+		inPin connection_205 {
+			bendpoints (20, 0), (20, 30), (-110, 30), (-110, 10)
+		}
+		outPin {
+			connection_204
+		}
+	}
+	if at (821, 271) {
+		inPin connection_211 {
+			bendpoints (10, 0), (10, -30)
+		}
+		ifControlFlowOutPin {
+			connection_203
+		}
+		sequenceCall {
+			inPin connection_210
 		}
 	}
 }

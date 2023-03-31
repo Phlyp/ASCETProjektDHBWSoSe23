@@ -37,6 +37,7 @@ struct L1_myCar_myDrive_Automatic_Obj {
 	scalarWrapper_Obj* power;
 	scalarWrapper_Obj* recupMult;
 	scalarWrapper_Obj* recup_momentum;
+	scalarWrapper_Obj* totalDist;
 	scalarWrapper_Obj* v;
 };
 

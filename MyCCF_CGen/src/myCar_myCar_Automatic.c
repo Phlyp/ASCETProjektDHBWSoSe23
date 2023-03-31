@@ -147,6 +147,8 @@ struct myCar_myCar_Automatic_RAM_SUBSTRUCT myCar_myCar_RAM = {
       0.0F,
       /* struct element:'myCar_myCar_RAM.myDrive_instance.recup_momentum' (modeled as:'recup_momentum.myDrive_instance.myCar_myCar') */
       0.0F,
+      /* struct element:'myCar_myCar_RAM.myDrive_instance.totalDist' (modeled as:'totalDist.myDrive_instance.myCar_myCar') */
+      0.0F,
       /* struct element:'myCar_myCar_RAM.myDrive_instance.v' (modeled as:'v.myDrive_instance.myCar_myCar') */
       0.0F,
       /* struct element:'myCar_myCar_RAM.myDrive_instance.batteryOn' (modeled as:'batteryOn.myDrive_instance.myCar_myCar') */
@@ -274,7 +276,7 @@ void myCar_myCar_Automatic_calc (void)
       = ((_t1real32 < 0.0F) ? (_t1real32 - 0.5F) : (_t1real32 + 0.5F));
    resources_CarMessages_v__myCar_myCar_Automatic_calc
       = ((_t1real32 >= 0.0F) ? (((_t1real32 <= 20000.0F) ? (uint16)_t1real32 : 20000U)) : 0U);
-   myCar_myDrive_Automatic_move(myDrive_instance_REF, resources_CarMessages_power__myCar_myCar_Automatic_calc, resources_CarMessages_brake__myCar_myCar_Automatic_calc, SystemLib_Miscellaneous_DeltaTimeService_deltaT_VAL, g_VAL * 1.01936799184506e-1F, resources_CarMessages_recuperation__myCar_myCar_Automatic_calc);
+   myCar_myDrive_Automatic_move(myDrive_instance_REF, resources_CarMessages_power__myCar_myCar_Automatic_calc, resources_CarMessages_brake__myCar_myCar_Automatic_calc, SystemLib_Miscellaneous_DeltaTimeService_deltaT_VAL * 4.0F, g_VAL * 1.01936799184506e-1F, resources_CarMessages_recuperation__myCar_myCar_Automatic_calc);
    /* send messages implicitly */
    {
       resources_CarMessages_v = resources_CarMessages_v__myCar_myCar_Automatic_calc;

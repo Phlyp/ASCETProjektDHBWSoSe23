@@ -59,7 +59,7 @@ blockdiagramSpecification Main {
 			connection_16
 		}
 	}
-	literal unit resources.s "1.0" at (241, 313) size (49, 0) {
+	literal unit resources.s "4.0" at (241, 313) size (49, 0) {
 		outPin {
 			connection_42
 		}

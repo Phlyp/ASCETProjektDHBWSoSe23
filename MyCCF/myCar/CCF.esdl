@@ -34,7 +34,7 @@ writes CarMessages.brake, CarMessages.power, DriverMessages.display, CarMessages
 	real br;
 	characteristic real c = 0.0;
 	PI PI_instance;
-	characteristic boolean useSilly = false;
+	characteristic boolean useSilly = true;
 
 	@thread
 	@generated("blockdiagram", "9713bcb6")

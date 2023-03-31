@@ -39,6 +39,7 @@
 #define power_VAL (self->myCar_myDrive_Automatic_RAM->power)
 #define recup_momentum_VAL (self->myCar_myDrive_Automatic_RAM->recup_momentum)
 #define recupMult_VAL (self->myCar_myDrive_Automatic_RAM->recupMult)
+#define totalDist_VAL (self->myCar_myDrive_Automatic_RAM->totalDist)
 #define TrackSize_VAL (self->myCar_myDrive_Automatic_CAL_MEM->TrackSize)
 #define v_VAL (self->myCar_myDrive_Automatic_RAM->v)
 
@@ -83,6 +84,7 @@ void myCar_myDrive_Automatic_move (
    {
       dist_VAL = 0.0F;
    } /* end if */
+   totalDist_VAL = ds_VAL + totalDist_VAL;
    dh_VAL
       = h_VAL - ESDL_Linear_CharTable1_getAt_r32r32((Landscape_REF)->xSize, (Landscape_REF)->xDist, (Landscape_REF)->values, dist_VAL);
    h_VAL

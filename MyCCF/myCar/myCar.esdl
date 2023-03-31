@@ -13,9 +13,9 @@ writes CarMessages.v {
 	public characteristic kg mass = 1500.0[kg];
 
 	@thread
-	@generated("blockdiagram", "0620d0d2")
+	@generated("blockdiagram", "170f7408")
 	public void calc() {
 		CarMessages.v = myDrive_instance.v; // Main/calc 1
-		myDrive_instance.move(CarMessages.power, CarMessages.brake, (DeltaTimeService.deltaT * 1.0[s]), g, CarMessages.recuperation); // Main/calc 2
+		myDrive_instance.move(CarMessages.power, CarMessages.brake, (DeltaTimeService.deltaT * 4.0[s]), g, CarMessages.recuperation); // Main/calc 2
 	}
 }

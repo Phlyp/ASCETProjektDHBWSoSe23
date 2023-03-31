@@ -56,7 +56,7 @@
 		        QP_BLOB 1
 		    /end SOURCE
 		    /begin TP_BLOB
-		         /* programm id */ 3472896052
+		         /* programm id */ 3724559754
 		         /* target id   */ 7
 		         /*             */ 0 2 0
 		    /end TP_BLOB
@@ -430,7 +430,7 @@
 			/* upper limit        */ 3.4028234663852886E+38
 			ECU_ADDRESS 0x0
 			/begin IF_DATA E_TARGET
-			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 5 1000 0 1000 23
+			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 5 1000 0 1000 24
 			/end IF_DATA
 		/end MEASUREMENT
 
@@ -595,6 +595,20 @@
 			ECU_ADDRESS 0x0
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 5 1000 0 1000 20
+			/end IF_DATA
+		/end MEASUREMENT
+
+		/begin MEASUREMENT myCar.myCar.myDrive_instance.totalDist
+			/* long identifier    */ ""
+			/* datatype           */ FLOAT32_IEEE
+			/* conversion         */ esdl_ident
+			/* resolution         */ 1
+			/* accuracy           */ 100.0
+			/* lower limit        */ -3.4028234663852886E+38
+			/* upper limit        */ 3.4028234663852886E+38
+			ECU_ADDRESS 0x0
+			/begin IF_DATA E_TARGET
+			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 5 1000 0 1000 23
 			/end IF_DATA
 		/end MEASUREMENT
 
@@ -1518,6 +1532,7 @@
 				myCar.myCar.myDrive_instance.power
 				myCar.myCar.myDrive_instance.recupMult
 				myCar.myCar.myDrive_instance.recup_momentum
+				myCar.myCar.myDrive_instance.totalDist
 				myCar.myCar.myDrive_instance.v
 			/end LOC_MEASUREMENT
 			/begin SUB_FUNCTION
@@ -1888,6 +1903,7 @@
 				myCar.myCar.myDrive_instance.power
 				myCar.myCar.myDrive_instance.recupMult
 				myCar.myCar.myDrive_instance.recup_momentum
+				myCar.myCar.myDrive_instance.totalDist
 				myCar.myCar.myDrive_instance.v
 			/end REF_MEASUREMENT
 			/begin SUB_GROUP

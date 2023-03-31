@@ -31,12 +31,11 @@ static class myDriveTest {
 	
 	@Test
 	public void testCrawlDistance() {
-		batteryLevels myBatteryLevels[5] = {0.3[kWh], 0.2[kWh], 0.1[kWh], 0.05[kWh], 0.03[kWh]};
 		m distCounter = 0.0[m];
 		kWh currentBattery = 0.0[kWh];
 
-		tester.move(10.0, move_brakeCtrl, move_mydt, move_myg, move_recupCtrl);
-		tester.move(10.0, move_brakeCtrl, move_mydt, move_myg, move_recupCtrl);
+		tester.move(6.0, move_brakeCtrl, move_mydt, move_myg, move_recupCtrl);
+		tester.move(6.0, move_brakeCtrl, move_mydt, move_myg, move_recupCtrl);
 
 		while (tester.v < 7.0[kmh]) {
 			tester.move(6.0, move_brakeCtrl, move_mydt, move_myg, move_recupCtrl);

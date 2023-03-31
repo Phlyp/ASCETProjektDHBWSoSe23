@@ -62,6 +62,7 @@ struct myCar_myDrive_Automatic_RAM_SUBSTRUCT {
    float32 power;
    float32 recupMult;
    float32 recup_momentum;
+   float32 totalDist;
    float32 v;
    boolean batteryOn;
    boolean noRecupPossible;

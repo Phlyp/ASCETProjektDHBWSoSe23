@@ -51,7 +51,7 @@ struct myCar_CCF_Automatic_CAL_MEM_SUBSTRUCT myCar_CCF_CAL_MEM = {
    /* struct element:'myCar_CCF_CAL_MEM.vs' (modeled as:'vs.myCar_CCF') */
    70.0F,
    /* struct element:'myCar_CCF_CAL_MEM.useSilly' (modeled as:'useSilly.myCar_CCF') */
-   false,
+   true,
    /* struct element:'myCar_CCF_CAL_MEM.withRecup' (modeled as:'withRecup.myCar_CCF') */
    true,
    /* substruct: myCar_CCF_CAL_MEM.TVI (modeled as:'TVI.myCar_CCF') */

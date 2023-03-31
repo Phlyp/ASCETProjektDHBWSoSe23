@@ -12,13 +12,11 @@
       <vertices xsi:type="sgraph:State" xmi:id="_wekkAM1GEe2isPpHQR91Ow" specification="static {&#xD;&#xA;&#x9;noRecupPossible = true;&#xD;&#xA;&#x9;recupMult = 0.0;&#xD;&#xA;&#x9;powerOverride = powerInput;&#xD;&#xA;}" name="BatteryFull" incomingTransitions="_z3kOMM1IEe2isPpHQR91Ow">
         <outgoingTransitions xmi:id="_H5Y9wM1JEe2isPpHQR91Ow" specification="battery &lt; 1.0 [kWh]" target="_KoJ40c1DEe2isPpHQR91Ow"/>
       </vertices>
-      <vertices xsi:type="sgraph:State" xmi:id="_yzGycM1GEe2isPpHQR91Ow" specification="static {&#xD;&#xA;&#x9;powerOverride = (powerInput / 100.0) *  5.5;&#xD;&#xA;}" name="crawlModeState" incomingTransitions="_XuEXcM1JEe2isPpHQR91Ow _2rcbgM1-Ee2GQadYlp21qg">
+      <vertices xsi:type="sgraph:State" xmi:id="_yzGycM1GEe2isPpHQR91Ow" specification="static {&#xD;&#xA;&#x9;powerOverride = (powerInput / 100.0) *  5.5;&#xD;&#xA;}" name="crawlModeState" incomingTransitions="_XuEXcM1JEe2isPpHQR91Ow">
         <outgoingTransitions xmi:id="_CIDb0M1KEe2isPpHQR91Ow" specification="battery == 0.0 [kWh]" target="_93gMoM1JEe2isPpHQR91Ow"/>
         <outgoingTransitions xmi:id="_mpg5sM1iEe2isPpHQR91Ow" specification="battery > 0.0011 [kWh]" target="_KoJ40c1DEe2isPpHQR91Ow"/>
       </vertices>
-      <vertices xsi:type="sgraph:State" xmi:id="_93gMoM1JEe2isPpHQR91Ow" specification="static {&#xD;&#xA;&#x9;powerOverride = 0.0;&#xD;&#xA;}" name="BatteryEmpty" incomingTransitions="_CIDb0M1KEe2isPpHQR91Ow">
-        <outgoingTransitions xmi:id="_2rcbgM1-Ee2GQadYlp21qg" specification="battery > 0.0[kWh]" target="_yzGycM1GEe2isPpHQR91Ow"/>
-      </vertices>
+      <vertices xsi:type="sgraph:State" xmi:id="_93gMoM1JEe2isPpHQR91Ow" specification="static {&#xD;&#xA;&#x9;powerOverride = 0.0;&#xD;&#xA;}" name="BatteryEmpty" incomingTransitions="_CIDb0M1KEe2isPpHQR91Ow"/>
     </regions>
   </sgraph:Statechart>
   <notation:Diagram xmi:id="_KoGOcM1DEe2isPpHQR91Ow" type="org.yakindu.sct.ui.editor.editor.StatechartDiagramEditor" element="_Kn8dcM1DEe2isPpHQR91Ow" measurementUnit="Pixel">
@@ -186,17 +184,6 @@
       <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_mpnnYs1iEe2isPpHQR91Ow" points="[-8, -36, 0, 93]$[0, -123, 8, 6]"/>
       <sourceAnchor xsi:type="notation:IdentityAnchor" xmi:id="_mpqqsM1iEe2isPpHQR91Ow" id="(1.0,0.34951456310679613)"/>
       <targetAnchor xsi:type="notation:IdentityAnchor" xmi:id="_mpqqsc1iEe2isPpHQR91Ow" id="(0.8238341968911918,0.94)"/>
-    </edges>
-    <edges xmi:id="_2sQ64M1-Ee2GQadYlp21qg" type="Transition" element="_2rcbgM1-Ee2GQadYlp21qg" source="_93gzsM1JEe2isPpHQR91Ow" target="_yzHZgM1GEe2isPpHQR91Ow">
-      <children xsi:type="notation:DecorationNode" xmi:id="_2sQ65M1-Ee2GQadYlp21qg" type="TransitionExpression">
-        <styles xsi:type="notation:ShapeStyle" xmi:id="_2sQ65c1-Ee2GQadYlp21qg"/>
-        <layoutConstraint xsi:type="notation:Location" xmi:id="_2sQ65s1-Ee2GQadYlp21qg" y="10"/>
-      </children>
-      <styles xsi:type="notation:ConnectorStyle" xmi:id="_2sQ64c1-Ee2GQadYlp21qg" routing="Rectilinear" lineColor="4210752"/>
-      <styles xsi:type="notation:FontStyle" xmi:id="_2sQ6481-Ee2GQadYlp21qg" fontName="Verdana"/>
-      <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_2sQ64s1-Ee2GQadYlp21qg" points="[0, -37, 183, -38]$[-179, -37, 4, -38]"/>
-      <sourceAnchor xsi:type="notation:IdentityAnchor" xmi:id="_2sQ6581-Ee2GQadYlp21qg" id="(0.0,0.6407766990291263)"/>
-      <targetAnchor xsi:type="notation:IdentityAnchor" xmi:id="_2sQ66M1-Ee2GQadYlp21qg" id="(0.9735099337748344,0.6504854368932039)"/>
     </edges>
   </notation:Diagram>
 </xmi:XMI>

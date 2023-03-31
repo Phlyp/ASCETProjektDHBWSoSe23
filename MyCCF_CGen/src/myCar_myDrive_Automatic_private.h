@@ -44,6 +44,7 @@
 #define BatteryState_instance_VAL self->BatteryState_instance
 #define BatteryState_instance_REF &(self->BatteryState_instance)
 #define power_VAL self->myCar_myDrive_Automatic_RAM->power
+#define totalDist_VAL self->myCar_myDrive_Automatic_RAM->totalDist
 /* ****************************************************************************
  * END: DEFINITION OF ACCESS MACROS
  ******************************************************************************/

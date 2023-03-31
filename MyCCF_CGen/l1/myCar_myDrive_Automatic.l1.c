@@ -22,7 +22,7 @@ static struct L1_myCar_myDrive_Automatic_Obj* L1_myCar_myDrive_AutomaticInstance
 
 /* L1 class descriptor */
 static ASDClassHeader L1_myCar_myDrive_Automatic_ClassHeader = {
-	0, 0, 24, 0, &_ObjectMethodList, &_ClassMethodList
+	0, 0, 25, 0, &_ObjectMethodList, &_ClassMethodList
 };
 L1_myCar_myDrive_Automatic_Class L1_myCar_myDrive_Automatic_ClassObj = {{1, {&L1_myCar_myDrive_Automatic_ClassHeader}, {0}}};
 
@@ -59,6 +59,7 @@ struct L1_myCar_myDrive_Automatic_Obj* initInstance_L1_myCar_myDrive_Automatic(c
 	L1_Instance->power = initInstance_scalarWrapper((uint32)&(power_VAL), sizeof(float32), ASD_VARIABLE);
 	L1_Instance->recupMult = initInstance_scalarWrapper((uint32)&(recupMult_VAL), sizeof(float32), ASD_VARIABLE);
 	L1_Instance->recup_momentum = initInstance_scalarWrapper((uint32)&(recup_momentum_VAL), sizeof(float32), ASD_VARIABLE);
+	L1_Instance->totalDist = initInstance_scalarWrapper((uint32)&(totalDist_VAL), sizeof(float32), ASD_VARIABLE);
 	L1_Instance->v = initInstance_scalarWrapper((uint32)&(v_VAL), sizeof(float32), ASD_VARIABLE);
 	L1_myCar_myDrive_AutomaticInstance = L1_Instance;
 	return L1_Instance;
