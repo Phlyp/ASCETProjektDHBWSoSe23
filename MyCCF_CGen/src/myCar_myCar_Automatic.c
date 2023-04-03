@@ -36,14 +36,31 @@ struct myCar_myCar_Automatic_CAL_MEM_SUBSTRUCT myCar_myCar_CAL_MEM = {
    9.81F,
    /* substruct: myCar_myCar_CAL_MEM.myDrive_instance (modeled as:'myDrive_instance.myCar_myCar') */
    {
-      /* struct element:'myCar_myCar_CAL_MEM.myDrive_instance.TrackSize' (modeled as:'TrackSize.myDrive_instance.myCar_myCar') */
-      4413.58F,
-      /* struct element:'myCar_myCar_CAL_MEM.myDrive_instance.mass' (modeled as:'mass.myDrive_instance.myCar_myCar') */
-      1500.0F,
-      /* substruct: myCar_myCar_CAL_MEM.myDrive_instance.myBattery_instance (modeled as:'myBattery_instance.myDrive_instance.myCar_myCar') */
+      /* substruct: myCar_myCar_CAL_MEM.myDrive_instance.BatteryManager_instance (modeled as:'BatteryManager_instance.myDrive_instance.myCar_myCar') */
       {
-         /* struct element:'myCar_myCar_CAL_MEM.myDrive_instance.myBattery_instance.mass' (modeled as:'mass.myBattery_instance.myDrive_instance.myCar_myCar') */
-         1500.0F
+         /* substruct: myCar_myCar_CAL_MEM.myDrive_instance.BatteryManager_instance.myBattery_instance (modeled as:'myBattery_instance.BatteryManager_instance.myDrive_instance.myCar_myCar') */
+         {
+            /* struct element:'myCar_myCar_CAL_MEM.myDrive_instance.BatteryManager_instance.myBattery_instance.mass' (modeled as:'mass.myBattery_instance.BatteryManager_instance.myDrive_instance.myCar_myCar') */
+            1500.0F
+         }
+      },
+      /* substruct: myCar_myCar_CAL_MEM.myDrive_instance.DistanceManager_instance (modeled as:'DistanceManager_instance.myDrive_instance.myCar_myCar') */
+      {
+         /* struct element:'myCar_myCar_CAL_MEM.myDrive_instance.DistanceManager_instance.TrackSize' (modeled as:'TrackSize.DistanceManager_instance.myDrive_instance.myCar_myCar') */
+         4413.58F,
+         /* struct element:'myCar_myCar_CAL_MEM.myDrive_instance.DistanceManager_instance.Landscape' (modeled as:'Landscape.DistanceManager_instance.myDrive_instance.myCar_myCar') */
+         {
+            20U,
+            {
+               0.0F, 100.0F, 145.569620253165F, 202.53164556962F, 221.518987341772F, 240.0F,
+               259.493670886076F, 300.0F, 350.0F, 400.0F, 450.0F, 500.0F, 600.0F, 700.0F,
+               750.0F, 800.0F, 820.0F, 850.0F, 900.0F, 1000.0F
+            },
+            {
+               0.0F, 0.0F, 4.0F, 7.125F, 10.375F, 10.75F, 10.5F, 9.0F, 5.375F, 2.625F, 0.625F,
+               1.25F, 0.625F, 0.0F, 0.0F, 1.375F, 1.1F, 0.75F, 0.625F, 0.0F
+            }
+         }
       },
       /* struct element:'myCar_myCar_CAL_MEM.myDrive_instance.AirFriction' (modeled as:'AirFriction.myDrive_instance.myCar_myCar') */
       {
@@ -84,20 +101,7 @@ struct myCar_myCar_Automatic_CAL_MEM_SUBSTRUCT myCar_myCar_CAL_MEM = {
             5.0F, 4.5F, 3.80000000000001F, 2.8F, 1.9F, 0.0F
          }
       },
-      /* struct element:'myCar_myCar_CAL_MEM.myDrive_instance.Landscape' (modeled as:'Landscape.myDrive_instance.myCar_myCar') */
-      {
-         20U,
-         {
-            0.0F, 100.0F, 145.569620253165F, 202.53164556962F, 221.518987341772F, 240.0F,
-            259.493670886076F, 300.0F, 350.0F, 400.0F, 450.0F, 500.0F, 600.0F, 700.0F,
-            750.0F, 800.0F, 820.0F, 850.0F, 900.0F, 1000.0F
-         },
-         {
-            0.0F, 0.0F, 4.0F, 7.125F, 10.375F, 10.75F, 10.5F, 9.0F, 5.375F, 2.625F, 0.625F,
-            1.25F, 0.625F, 0.0F, 0.0F, 1.375F, 1.1F, 0.75F, 0.625F, 0.0F
-         }
-      },
-      /* struct element:'myCar_myCar_CAL_MEM.myDrive_instance.curve_brake_recuperation_table' (modeled as:'curve_brake_recuperation_table.myDrive_instance.myCar_myCar') */
+      /* struct element:'myCar_myCar_CAL_MEM.myDrive_instance.cbrt' (modeled as:'cbrt.myDrive_instance.myCar_myCar') */
       {
          3U,
          {
@@ -125,19 +129,9 @@ struct myCar_myCar_Automatic_RAM_SUBSTRUCT myCar_myCar_RAM = {
    {
       /* struct element:'myCar_myCar_RAM.myDrive_instance.battery' (modeled as:'battery.myDrive_instance.myCar_myCar') */
       0.0F,
-      /* struct element:'myCar_myCar_RAM.myDrive_instance.dh' (modeled as:'dh.myDrive_instance.myCar_myCar') */
-      0.0F,
       /* struct element:'myCar_myCar_RAM.myDrive_instance.dist' (modeled as:'dist.myDrive_instance.myCar_myCar') */
       0.0F,
       /* struct element:'myCar_myCar_RAM.myDrive_instance.ds' (modeled as:'ds.myDrive_instance.myCar_myCar') */
-      0.0F,
-      /* struct element:'myCar_myCar_RAM.myDrive_instance.e_kwh' (modeled as:'e_kwh.myDrive_instance.myCar_myCar') */
-      0.0F,
-      /* struct element:'myCar_myCar_RAM.myDrive_instance.energy' (modeled as:'energy.myDrive_instance.myCar_myCar') */
-      0.0F,
-      /* struct element:'myCar_myCar_RAM.myDrive_instance.force' (modeled as:'force.myDrive_instance.myCar_myCar') */
-      0.0F,
-      /* struct element:'myCar_myCar_RAM.myDrive_instance.h' (modeled as:'h.myDrive_instance.myCar_myCar') */
       0.0F,
       /* struct element:'myCar_myCar_RAM.myDrive_instance.momentum' (modeled as:'momentum.myDrive_instance.myCar_myCar') */
       0.0F,
@@ -151,34 +145,54 @@ struct myCar_myCar_Automatic_RAM_SUBSTRUCT myCar_myCar_RAM = {
       0.0F,
       /* struct element:'myCar_myCar_RAM.myDrive_instance.v' (modeled as:'v.myDrive_instance.myCar_myCar') */
       0.0F,
-      /* struct element:'myCar_myCar_RAM.myDrive_instance.batteryOn' (modeled as:'batteryOn.myDrive_instance.myCar_myCar') */
-      false,
       /* struct element:'myCar_myCar_RAM.myDrive_instance.noRecupPossible' (modeled as:'noRecupPossible.myDrive_instance.myCar_myCar') */
       false,
-      /* substruct: myCar_myCar_RAM.myDrive_instance.BatteryState_instance (modeled as:'BatteryState_instance.myDrive_instance.myCar_myCar') */
+      /* substruct: myCar_myCar_RAM.myDrive_instance.BatteryManager_instance (modeled as:'BatteryManager_instance.myDrive_instance.myCar_myCar') */
       {
-         /* struct element:'myCar_myCar_RAM.myDrive_instance.BatteryState_instance.battery' (modeled as:'battery.BatteryState_instance.myDrive_instance.myCar_myCar') */
+         /* struct element:'myCar_myCar_RAM.myDrive_instance.BatteryManager_instance.battery' (modeled as:'battery.BatteryManager_instance.myDrive_instance.myCar_myCar') */
          0.0F,
-         /* struct element:'myCar_myCar_RAM.myDrive_instance.BatteryState_instance.powerInput' (modeled as:'powerInput.BatteryState_instance.myDrive_instance.myCar_myCar') */
+         /* struct element:'myCar_myCar_RAM.myDrive_instance.BatteryManager_instance.recupMult' (modeled as:'recupMult.BatteryManager_instance.myDrive_instance.myCar_myCar') */
          0.0F,
-         /* struct element:'myCar_myCar_RAM.myDrive_instance.BatteryState_instance.powerOverride' (modeled as:'powerOverride.BatteryState_instance.myDrive_instance.myCar_myCar') */
-         0.0F,
-         /* struct element:'myCar_myCar_RAM.myDrive_instance.BatteryState_instance.recupMult' (modeled as:'recupMult.BatteryState_instance.myDrive_instance.myCar_myCar') */
-         0.0F,
-         /* struct element:'myCar_myCar_RAM.myDrive_instance.BatteryState_instance.noRecupPossible' (modeled as:'noRecupPossible.BatteryState_instance.myDrive_instance.myCar_myCar') */
+         /* struct element:'myCar_myCar_RAM.myDrive_instance.BatteryManager_instance.noRecupPossible' (modeled as:'noRecupPossible.BatteryManager_instance.myDrive_instance.myCar_myCar') */
          false,
-         /* struct element:'myCar_myCar_RAM.myDrive_instance.BatteryState_instance.sm' (modeled as:'sm.BatteryState_instance.myDrive_instance.myCar_myCar') */
-         0U
+         /* substruct: myCar_myCar_RAM.myDrive_instance.BatteryManager_instance.BatteryState_instance (modeled as:'BatteryState_instance.BatteryManager_instance.myDrive_instance.myCar_myCar') */
+         {
+            /* struct element:'myCar_myCar_RAM.myDrive_instance.BatteryManager_instance.BatteryState_instance.battery' (modeled as:'battery.BatteryState_instance.BatteryManager_instance.myDrive_instance.myCar_myCar') */
+            0.0F,
+            /* struct element:'myCar_myCar_RAM.myDrive_instance.BatteryManager_instance.BatteryState_instance.powerInput' (modeled as:'powerInput.BatteryState_instance.BatteryManager_instance.myDrive_instance.myCar_myCar') */
+            0.0F,
+            /* struct element:'myCar_myCar_RAM.myDrive_instance.BatteryManager_instance.BatteryState_instance.powerOverride' (modeled as:'powerOverride.BatteryState_instance.BatteryManager_instance.myDrive_instance.myCar_myCar') */
+            0.0F,
+            /* struct element:'myCar_myCar_RAM.myDrive_instance.BatteryManager_instance.BatteryState_instance.recupMult' (modeled as:'recupMult.BatteryState_instance.BatteryManager_instance.myDrive_instance.myCar_myCar') */
+            0.0F,
+            /* struct element:'myCar_myCar_RAM.myDrive_instance.BatteryManager_instance.BatteryState_instance.noRecupPossible' (modeled as:'noRecupPossible.BatteryState_instance.BatteryManager_instance.myDrive_instance.myCar_myCar') */
+            false,
+            /* struct element:'myCar_myCar_RAM.myDrive_instance.BatteryManager_instance.BatteryState_instance.sm' (modeled as:'sm.BatteryState_instance.BatteryManager_instance.myDrive_instance.myCar_myCar') */
+            0U
+         },
+         /* substruct: myCar_myCar_RAM.myDrive_instance.BatteryManager_instance.myBattery_instance (modeled as:'myBattery_instance.BatteryManager_instance.myDrive_instance.myCar_myCar') */
+         {
+            /* struct element:'myCar_myCar_RAM.myDrive_instance.BatteryManager_instance.myBattery_instance.battery' (modeled as:'battery.myBattery_instance.BatteryManager_instance.myDrive_instance.myCar_myCar') */
+            1.0F,
+            /* struct element:'myCar_myCar_RAM.myDrive_instance.BatteryManager_instance.myBattery_instance.e_kwh' (modeled as:'e_kwh.myBattery_instance.BatteryManager_instance.myDrive_instance.myCar_myCar') */
+            0.0F,
+            /* struct element:'myCar_myCar_RAM.myDrive_instance.BatteryManager_instance.myBattery_instance.energy' (modeled as:'energy.myBattery_instance.BatteryManager_instance.myDrive_instance.myCar_myCar') */
+            0.0F,
+            /* struct element:'myCar_myCar_RAM.myDrive_instance.BatteryManager_instance.myBattery_instance.force' (modeled as:'force.myBattery_instance.BatteryManager_instance.myDrive_instance.myCar_myCar') */
+            0.0F
+         }
       },
-      /* substruct: myCar_myCar_RAM.myDrive_instance.myBattery_instance (modeled as:'myBattery_instance.myDrive_instance.myCar_myCar') */
+      /* substruct: myCar_myCar_RAM.myDrive_instance.DistanceManager_instance (modeled as:'DistanceManager_instance.myDrive_instance.myCar_myCar') */
       {
-         /* struct element:'myCar_myCar_RAM.myDrive_instance.myBattery_instance.battery' (modeled as:'battery.myBattery_instance.myDrive_instance.myCar_myCar') */
-         1.0F,
-         /* struct element:'myCar_myCar_RAM.myDrive_instance.myBattery_instance.e_kwh' (modeled as:'e_kwh.myBattery_instance.myDrive_instance.myCar_myCar') */
+         /* struct element:'myCar_myCar_RAM.myDrive_instance.DistanceManager_instance.dh' (modeled as:'dh.DistanceManager_instance.myDrive_instance.myCar_myCar') */
          0.0F,
-         /* struct element:'myCar_myCar_RAM.myDrive_instance.myBattery_instance.energy' (modeled as:'energy.myBattery_instance.myDrive_instance.myCar_myCar') */
+         /* struct element:'myCar_myCar_RAM.myDrive_instance.DistanceManager_instance.dist' (modeled as:'dist.DistanceManager_instance.myDrive_instance.myCar_myCar') */
          0.0F,
-         /* struct element:'myCar_myCar_RAM.myDrive_instance.myBattery_instance.force' (modeled as:'force.myBattery_instance.myDrive_instance.myCar_myCar') */
+         /* struct element:'myCar_myCar_RAM.myDrive_instance.DistanceManager_instance.ds' (modeled as:'ds.DistanceManager_instance.myDrive_instance.myCar_myCar') */
+         0.0F,
+         /* struct element:'myCar_myCar_RAM.myDrive_instance.DistanceManager_instance.h' (modeled as:'h.DistanceManager_instance.myDrive_instance.myCar_myCar') */
+         0.0F,
+         /* struct element:'myCar_myCar_RAM.myDrive_instance.DistanceManager_instance.totalDist' (modeled as:'totalDist.DistanceManager_instance.myDrive_instance.myCar_myCar') */
          0.0F
       }
    }
@@ -201,17 +215,29 @@ const struct myCar_myCar_Automatic myCar_myCar = {
       &myCar_myCar_CAL_MEM.myDrive_instance,
       /* type descriptor pointer 'myCar_myDrive_Automatic_RAM' for memory class substruct for 'RAM' */
       &myCar_myCar_RAM.myDrive_instance,
-      /* substruct: myCar_myCar.myDrive_instance.BatteryState_instance (modeled as:'BatteryState_instance.myDrive_instance.myCar_myCar') */
+      /* substruct: myCar_myCar.myDrive_instance.BatteryManager_instance (modeled as:'BatteryManager_instance.myDrive_instance.myCar_myCar') */
       {
-         /* type descriptor pointer 'myCar_BatteryState_Automatic_RAM' for memory class substruct for 'RAM' */
-         &myCar_myCar_RAM.myDrive_instance.BatteryState_instance
+         /* type descriptor pointer 'myCar_BatteryManager_Automatic_RAM' for memory class substruct for 'RAM' */
+         &myCar_myCar_RAM.myDrive_instance.BatteryManager_instance,
+         /* substruct: myCar_myCar.myDrive_instance.BatteryManager_instance.BatteryState_instance (modeled as:'BatteryState_instance.BatteryManager_instance.myDrive_instance.myCar_myCar') */
+         {
+            /* type descriptor pointer 'myCar_BatteryState_Automatic_RAM' for memory class substruct for 'RAM' */
+            &myCar_myCar_RAM.myDrive_instance.BatteryManager_instance.BatteryState_instance
+         },
+         /* substruct: myCar_myCar.myDrive_instance.BatteryManager_instance.myBattery_instance (modeled as:'myBattery_instance.BatteryManager_instance.myDrive_instance.myCar_myCar') */
+         {
+            /* type descriptor pointer 'myCar_myBattery_myDrive_CAL_MEM' for memory class substruct for 'CAL_MEM' */
+            &myCar_myCar_CAL_MEM.myDrive_instance.BatteryManager_instance.myBattery_instance,
+            /* type descriptor pointer 'myCar_myBattery_myDrive_RAM' for memory class substruct for 'RAM' */
+            &myCar_myCar_RAM.myDrive_instance.BatteryManager_instance.myBattery_instance
+         }
       },
-      /* substruct: myCar_myCar.myDrive_instance.myBattery_instance (modeled as:'myBattery_instance.myDrive_instance.myCar_myCar') */
+      /* substruct: myCar_myCar.myDrive_instance.DistanceManager_instance (modeled as:'DistanceManager_instance.myDrive_instance.myCar_myCar') */
       {
-         /* type descriptor pointer 'myCar_myBattery_myDrive_CAL_MEM' for memory class substruct for 'CAL_MEM' */
-         &myCar_myCar_CAL_MEM.myDrive_instance.myBattery_instance,
-         /* type descriptor pointer 'myCar_myBattery_myDrive_RAM' for memory class substruct for 'RAM' */
-         &myCar_myCar_RAM.myDrive_instance.myBattery_instance
+         /* type descriptor pointer 'myCar_DistanceManager_Automatic_CAL_MEM' for memory class substruct for 'CAL_MEM' */
+         &myCar_myCar_CAL_MEM.myDrive_instance.DistanceManager_instance,
+         /* type descriptor pointer 'myCar_DistanceManager_Automatic_RAM' for memory class substruct for 'RAM' */
+         &myCar_myCar_RAM.myDrive_instance.DistanceManager_instance
       }
    }
 };
@@ -276,7 +302,7 @@ void myCar_myCar_Automatic_calc (void)
       = ((_t1real32 < 0.0F) ? (_t1real32 - 0.5F) : (_t1real32 + 0.5F));
    resources_CarMessages_v__myCar_myCar_Automatic_calc
       = ((_t1real32 >= 0.0F) ? (((_t1real32 <= 20000.0F) ? (uint16)_t1real32 : 20000U)) : 0U);
-   myCar_myDrive_Automatic_move(myDrive_instance_REF, resources_CarMessages_power__myCar_myCar_Automatic_calc, resources_CarMessages_brake__myCar_myCar_Automatic_calc, SystemLib_Miscellaneous_DeltaTimeService_deltaT_VAL * 4.0F, g_VAL * 1.01936799184506e-1F, resources_CarMessages_recuperation__myCar_myCar_Automatic_calc);
+   myCar_myDrive_Automatic_move(myDrive_instance_REF, resources_CarMessages_power__myCar_myCar_Automatic_calc, resources_CarMessages_brake__myCar_myCar_Automatic_calc, SystemLib_Miscellaneous_DeltaTimeService_deltaT_VAL, g_VAL * 1.01936799184506e-1F, resources_CarMessages_recuperation__myCar_myCar_Automatic_calc);
    /* send messages implicitly */
    {
       resources_CarMessages_v = resources_CarMessages_v__myCar_myCar_Automatic_calc;

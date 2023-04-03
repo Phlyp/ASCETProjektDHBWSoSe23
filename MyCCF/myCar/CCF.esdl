@@ -37,7 +37,7 @@ writes CarMessages.brake, CarMessages.power, DriverMessages.display, CarMessages
 	characteristic boolean useSilly = true;
 
 	@thread
-	@generated("blockdiagram", "9713bcb6")
+	@generated("blockdiagram", "3e2c5cb4")
 	public void calc() {
 		OnRising.compute(DriverMessages.on); // Main/calc 1
 		if (OnRising.value()) {
@@ -63,7 +63,7 @@ writes CarMessages.brake, CarMessages.power, DriverMessages.display, CarMessages
 		CCFS.bra = DriverMessages.brake; // Main/calc 12
 		CCFS.cCFStateStatemachineTrigger(); // Main/calc 13
 		CarMessages.power = CCFS.pw; // Main/calc 14
-		CarMessages.recuperation = CCFS.br; // Main/calc 15
-		DriverMessages.display = CCFS.on; // Main/calc 16
+		DriverMessages.display = CCFS.on; // Main/calc 15
+		CarMessages.recuperation = CCFS.br; // Main/calc 16
 	}
 }

@@ -20,7 +20,7 @@ static class myDriveTest {
 	Logging logger;
 	characteristic real move_powerCtrl = 0.0;
 	characteristic real move_brakeCtrl = 0.0;
-	characteristic s move_mydt = 0.1[s];
+	characteristic s move_mydt = 0.01[s];
 	characteristic g move_myg = 0.0[g];
 	characteristic real move_recupCtrl = 0.0;
 
@@ -43,10 +43,9 @@ static class myDriveTest {
 		
 		currentBattery = tester.battery;
 		distCounter = tester.dist;
-//		logger.log((currentBattery - tester.battery) / 1.0[kWh], (tester.dist) / 1.0[m]);
+
 		while (tester.dist < (distCounter + 100.0[m])) {
 			tester.move(5.5, move_brakeCtrl, move_mydt, move_myg, move_recupCtrl);
-//			logger.log((currentBattery - tester.battery) / 1.0[kWh], (tester.dist) / 1.0[m]);
 		}
 
 		logger.log((currentBattery - tester.battery) / 1.0[kWh], (tester.dist - distCounter) / 1.0[m]);

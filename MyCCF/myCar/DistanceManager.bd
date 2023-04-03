@@ -1,0 +1,286 @@
+classType myCar.DistanceManager
+blockdiagramSpecification Main {
+	methodBody move {
+		outPin active {
+			connection_17, connection_18, connection_19, connection_20, connection_30, connection_38, connection_59
+		}
+	}
+	multiplication at (141, 236) {
+		inPin connection_57
+		inPin connection_35 {
+			bendpoints (50, 0), (50, -20)
+		}
+		outPin {
+			connection_21
+		}
+	}
+	simpleIdentifier dist at (31, 175) {
+		label at (20, -1)
+		inPin outPin {
+			connection_22
+		}
+		sequenceCall at (-10, -14) {
+			inPin
+		}
+	}
+	division at (331, 126) {
+		inPin connection_47
+		inPin connection_43 {
+			bendpoints (40, 0), (40, -100)
+		}
+		outPin {
+			connection_23
+		}
+	}
+	literal unit resources.m "0.0" at (821, 183) size (49, 0) {
+		outPin {
+			connection_25
+		}
+	}
+	simpleIdentifier h at (31, 115) {
+		label at (20, -1)
+		inPin outPin {
+			connection_27
+		}
+		sequenceCall at (-10, -14) {
+			inPin
+		}
+	}
+	addition at (521, 256) {
+		inPin connection_44 {
+			bendpoints (20, 0), (20, 60), (220, 60), (220, 10)
+		}
+		inPin connection_41 {
+			bendpoints (20, 0), (20, 30), (-110, 30), (-110, 10)
+		}
+		outPin {
+			connection_29
+		}
+	}
+	simpleIdentifier Landscape at (111, 161) {
+		label at (0, 1)
+		inPin connection_22 {
+			bendpoints (10, 0)
+		}
+		outPin {
+			connection_32, connection_31
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	addition at (331, 246) {
+		inPin connection_45
+		inPin connection_42 {
+			bendpoints (20, 0), (20, 30), (-140, 30), (-140, 10)
+		}
+		outPin {
+			connection_34
+		}
+	}
+	methodArgumentIdentifier move.mydt at (31, 275) {
+		label at (0, -1)
+		outPin {
+			connection_35
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	greater at (671, 166) {
+		inPin connection_40
+		inPin connection_37 {
+			bendpoints (10, 0), (10, -10)
+		}
+		outPin {
+			connection_36
+		}
+	}
+	simpleIdentifier TrackSize at (591, 195) {
+		label at (0, -1)
+		outPin {
+			connection_37
+		}
+		sequenceCall at (-10, -14) {
+			inPin
+		}
+	}
+	subtraction at (201, 116) {
+		inPin connection_27
+		inPin connection_32 {
+			bendpoints (10, 0), (10, -40)
+		}
+		outPin {
+			connection_39
+		}
+	}
+	simpleIdentifier dist at (541, 165) {
+		label at (20, -1)
+		inPin outPin {
+			connection_40
+		}
+		sequenceCall at (-10, -14) {
+			inPin
+		}
+	}
+	simpleIdentifier totalDist at (571, 265) {
+		label at (0, -1)
+		inPin connection_29
+		outPin {
+			connection_41
+		}
+		sequenceCall at (-10, -14) {
+			inPin connection_56 {
+				bendpoints (60, 0), (60, 110), (-380, 110), (-380, 190), (-320, 190)
+			}
+		}
+	}
+	simpleIdentifier dist at (881, 185) {
+		label at (20, -1)
+		inPin connection_25 {
+			bendpoints (10, 0)
+		}
+		outPin sequenceCall at (-10, -14) {
+			inPin connection_46
+		}
+	}
+	simpleIdentifier dist at (411, 255) {
+		label at (20, -1)
+		inPin connection_34
+		outPin {
+			connection_42
+		}
+		sequenceCall at (-10, -14) {
+			inPin connection_54 {
+				bendpoints (120, 0), (120, 70), (-410, 70), (-410, 180)
+			}
+		}
+	}
+	simpleIdentifier ds at (231, 245) {
+		label at (10, -1)
+		inPin connection_21
+		outPin {
+			connection_44, connection_45, connection_43
+		}
+		sequenceCall at (-10, -14) {
+			inPin connection_20
+		}
+	}
+	if at (751, 171) {
+		inPin connection_36
+		ifControlFlowOutPin {
+			connection_46
+		}
+		sequenceCall {
+			inPin connection_17
+		}
+	}
+	simpleIdentifier dh at (251, 125) {
+		label at (10, -1)
+		inPin connection_39
+		outPin {
+			connection_47
+		}
+		sequenceCall at (0, -14) {
+			inPin connection_38
+		}
+	}
+	simpleIdentifier h at (231, 175) {
+		label at (20, -1)
+		inPin connection_31
+		outPin sequenceCall at (0, -14) {
+			inPin connection_30
+		}
+	}
+	simpleIdentifier ds at (571, 55) {
+		label at (10, -1)
+		inPin outPin {
+			connection_48
+		}
+		sequenceCall at (-10, -14) {
+			inPin
+		}
+	}
+	greater at (681, 56) {
+		inPin connection_48
+		inPin connection_53 {
+			bendpoints (30, 0), (30, -20)
+		}
+		outPin {
+			connection_50, connection_49
+		}
+	}
+	literal unit resources.m "0.001" at (581, 93) size (49, 0) {
+		outPin {
+			connection_53, connection_52
+		}
+	}
+	simpleIdentifier ds at (791, 105) {
+		label at (10, -1)
+		inPin connection_52 {
+			bendpoints (30, 0), (30, 10)
+		}
+		outPin sequenceCall at (0, -14) {
+			inPin connection_55
+		}
+	}
+	ifElse at (751, 61) {
+		inPin connection_50
+		ifControlFlowOutPin {
+			connection_54
+		}
+		elseControlFlowOutPin {
+			connection_55
+		}
+		sequenceCall {
+			inPin connection_18
+		}
+	}
+	if at (831, 31) {
+		inPin connection_49 {
+			bendpoints (10, 0), (10, -30)
+		}
+		ifControlFlowOutPin {
+			connection_56
+		}
+		sequenceCall {
+			inPin connection_19
+		}
+	}
+	multiplication at (391, 86) {
+		inPin connection_58
+		inPin connection_23 {
+			bendpoints (10, 0), (10, -30)
+		}
+		outPin {
+			connection_60
+		}
+	}
+	methodArgumentIdentifier move.myv at (31, 235) {
+		label at (0, -1)
+		outPin {
+			connection_57
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	methodArgumentIdentifier move.myg at (321, 85) {
+		label at (0, -1)
+		outPin {
+			connection_58
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	return at (451, 45) {
+		label at (0, 0)
+		inPin connection_60 {
+			bendpoints (10, 0), (10, -50)
+		}
+		sequenceCall {
+			inPin connection_59
+		}
+	}
+}

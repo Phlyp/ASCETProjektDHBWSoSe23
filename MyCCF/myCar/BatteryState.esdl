@@ -16,7 +16,7 @@ class BatteryState {
 	@generated("statemachine", "000000")
 	public void batteryStateStatemachineTrigger() triggers BatteryStateStatemachine;
 
-	@generated("statemachine", "75fa8c05")
+	@generated("statemachine", "d412d6c9")
 	statemachine BatteryStateStatemachine using BatteryStateStatemachineStates {
 		start BatteryNormal;
 
@@ -41,7 +41,11 @@ class BatteryState {
 
 		state crawlModeState {
 			static {
-				powerOverride = (powerInput / 100.0) * 5.5;
+				if (powerInput >= 5.5) {
+					powerOverride = 5.5;
+				} else {
+					powerOverride = powerInput;
+				}
 			}
 			transition battery == 0.0[kWh] to BatteryEmpty;
 			transition battery > 0.0011[kWh] to BatteryNormal;

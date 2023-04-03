@@ -19,32 +19,22 @@
 #define EngineMomentum_REF &(self->myCar_myDrive_Automatic_CAL_MEM->EngineMomentum)
 #define AirFriction_VAL self->myCar_myDrive_Automatic_CAL_MEM->AirFriction
 #define AirFriction_REF &(self->myCar_myDrive_Automatic_CAL_MEM->AirFriction)
-#define Landscape_VAL self->myCar_myDrive_Automatic_CAL_MEM->Landscape
-#define Landscape_REF &(self->myCar_myDrive_Automatic_CAL_MEM->Landscape)
-#define h_VAL self->myCar_myDrive_Automatic_RAM->h
-#define dh_VAL self->myCar_myDrive_Automatic_RAM->dh
 #define ds_VAL self->myCar_myDrive_Automatic_RAM->ds
 #define momentum_VAL self->myCar_myDrive_Automatic_RAM->momentum
 #define dist_VAL self->myCar_myDrive_Automatic_RAM->dist
-#define TrackSize_VAL self->myCar_myDrive_Automatic_CAL_MEM->TrackSize
 #define v_VAL self->myCar_myDrive_Automatic_RAM->v
-#define force_VAL self->myCar_myDrive_Automatic_RAM->force
-#define mass_VAL self->myCar_myDrive_Automatic_CAL_MEM->mass
-#define energy_VAL self->myCar_myDrive_Automatic_RAM->energy
-#define e_kwh_VAL self->myCar_myDrive_Automatic_RAM->e_kwh
 #define battery_VAL self->myCar_myDrive_Automatic_RAM->battery
-#define myBattery_instance_VAL self->myBattery_instance
-#define myBattery_instance_REF &(self->myBattery_instance)
-#define curve_brake_recuperation_table_VAL self->myCar_myDrive_Automatic_CAL_MEM->curve_brake_recuperation_table
-#define curve_brake_recuperation_table_REF &(self->myCar_myDrive_Automatic_CAL_MEM->curve_brake_recuperation_table)
+#define cbrt_VAL self->myCar_myDrive_Automatic_CAL_MEM->cbrt
+#define cbrt_REF &(self->myCar_myDrive_Automatic_CAL_MEM->cbrt)
 #define recup_momentum_VAL self->myCar_myDrive_Automatic_RAM->recup_momentum
 #define noRecupPossible_VAL self->myCar_myDrive_Automatic_RAM->noRecupPossible
-#define batteryOn_VAL self->myCar_myDrive_Automatic_RAM->batteryOn
 #define recupMult_VAL self->myCar_myDrive_Automatic_RAM->recupMult
-#define BatteryState_instance_VAL self->BatteryState_instance
-#define BatteryState_instance_REF &(self->BatteryState_instance)
 #define power_VAL self->myCar_myDrive_Automatic_RAM->power
 #define totalDist_VAL self->myCar_myDrive_Automatic_RAM->totalDist
+#define DistanceManager_instance_VAL self->DistanceManager_instance
+#define DistanceManager_instance_REF &(self->DistanceManager_instance)
+#define BatteryManager_instance_VAL self->BatteryManager_instance
+#define BatteryManager_instance_REF &(self->BatteryManager_instance)
 /* ****************************************************************************
  * END: DEFINITION OF ACCESS MACROS
  ******************************************************************************/

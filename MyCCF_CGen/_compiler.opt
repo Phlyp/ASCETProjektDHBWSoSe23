@@ -18,10 +18,10 @@
 -DOBJECT
 -DESDL_LOGGING_ENABLED
 -I.
--I"C:/Users/fiery/ETAS/ASCET-DEVELOPER-7.7.0/workspace/ASCETProjektDHBWSoSe23/MyCCF_CGen/platform"
--I"C:/Users/fiery/ETAS/ASCET-DEVELOPER-7.7.0/workspace/ASCETProjektDHBWSoSe23/MyCCF_CGen/l1"
 -I"C:/Users/fiery/ETAS/ASCET-DEVELOPER-7.7.0/workspace/ASCETProjektDHBWSoSe23/MyCCF_CGen/include"
 -I"C:/Users/fiery/ETAS/ASCET-DEVELOPER-7.7.0/workspace/ASCETProjektDHBWSoSe23/MyCCF_CGen/src"
+-I"C:/Users/fiery/ETAS/ASCET-DEVELOPER-7.7.0/workspace/ASCETProjektDHBWSoSe23/MyCCF_CGen/l1"
+-I"C:/Users/fiery/ETAS/ASCET-DEVELOPER-7.7.0/workspace/ASCETProjektDHBWSoSe23/MyCCF_CGen/platform"
 -I"C:/ETAS/ASCET-DEVELOPER7.7/plugins/com.etas.rta_osek_1.0.4/rta/VRTA/inc"
 -I"C:/ETAS/ASCET-DEVELOPER7.7/configuration/org.eclipse.osgi/54/0/.cp/platform/rta_osek"
 -I"C:/Users/fiery/ETAS/ASCET-DEVELOPER-7.7.0/workspace/ASCETProjektDHBWSoSe23/MyCCF_CGen/platform"

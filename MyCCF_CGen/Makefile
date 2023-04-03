@@ -12,10 +12,10 @@ P_WORKING=C:/Users/fiery/ETAS/ASCET-DEVELOPER-7.7.0/workspace/ASCETProjektDHBWSo
 P_TARGET=$(pathcnv SN,C:/ETAS/ASCET-DEVELOPER7.7/configuration/org.eclipse.osgi/54/0/.cp/platform)
 P_OBJ=obj
 
-P_ADDITIONAL_INCLUDE=$(pathcnv SN,C:/Users/fiery/ETAS/ASCET-DEVELOPER-7.7.0/workspace/ASCETProjektDHBWSoSe23/MyCCF_CGen/platform\
-    C:/Users/fiery/ETAS/ASCET-DEVELOPER-7.7.0/workspace/ASCETProjektDHBWSoSe23/MyCCF_CGen/l1\
-    C:/Users/fiery/ETAS/ASCET-DEVELOPER-7.7.0/workspace/ASCETProjektDHBWSoSe23/MyCCF_CGen/include\
+P_ADDITIONAL_INCLUDE=$(pathcnv SN,C:/Users/fiery/ETAS/ASCET-DEVELOPER-7.7.0/workspace/ASCETProjektDHBWSoSe23/MyCCF_CGen/include\
     C:/Users/fiery/ETAS/ASCET-DEVELOPER-7.7.0/workspace/ASCETProjektDHBWSoSe23/MyCCF_CGen/src\
+    C:/Users/fiery/ETAS/ASCET-DEVELOPER-7.7.0/workspace/ASCETProjektDHBWSoSe23/MyCCF_CGen/l1\
+    C:/Users/fiery/ETAS/ASCET-DEVELOPER-7.7.0/workspace/ASCETProjektDHBWSoSe23/MyCCF_CGen/platform\
     C:/ETAS/ASCET-DEVELOPER7.7/plugins/com.etas.rta_osek_1.0.4/rta/VRTA/inc\
     C:/ETAS/ASCET-DEVELOPER7.7/configuration/org.eclipse.osgi/54/0/.cp/platform/rta_osek\
     C:/Users/fiery/ETAS/ASCET-DEVELOPER-7.7.0/workspace/ASCETProjektDHBWSoSe23/MyCCF_CGen/platform)
@@ -23,25 +23,11 @@ ADDITIONAL_LIBS=$(pathcnv SN,C:/Users/fiery/ETAS/ASCET-DEVELOPER-7.7.0/workspace
 ADDITIONAL_OBJECTS=
 
 OBJECTS=\
-    $(P_OBJ)/PC_PC.l1.o\
-    $(P_OBJ)/myCar_myCar_Automatic.l1.o\
-    $(P_OBJ)/myCar_myDrive_Automatic.l1.o\
-    $(P_OBJ)/myCar_myBattery_myDrive.l1.o\
-    $(P_OBJ)/myCar_BatteryState_Automatic.l1.o\
-    $(P_OBJ)/resources_CarMessages_Automatic.l1.o\
-    $(P_OBJ)/myCar_CCF_Automatic.l1.o\
-    $(P_OBJ)/myCar_TargetVelocity_Automatic.l1.o\
-    $(P_OBJ)/SystemLib_Miscellaneous_EdgeRising_Impl.l1.o\
-    $(P_OBJ)/SystemLib_Transferfunction_Control_PID_Impl.l1.o\
-    $(P_OBJ)/myCar_SplitSignal_Automatic.l1.o\
-    $(P_OBJ)/myCar_CCFState_Automatic.l1.o\
-    $(P_OBJ)/SystemLib_Transferfunction_Control_PI_Impl.l1.o\
-    $(P_OBJ)/resources_DriverMessages_Automatic.l1.o\
-    $(P_OBJ)/myCar_Driver_Automatic.l1.o\
-    $(P_OBJ)/SystemLib_Miscellaneous_DeltaTimeService_Automatic.l1.o\
+    $(P_OBJ)/myCar_BatteryManager_Automatic.o\
     $(P_OBJ)/myCar_BatteryState_Automatic.o\
     $(P_OBJ)/myCar_CCFState_Automatic.o\
     $(P_OBJ)/myCar_CCF_Automatic.o\
+    $(P_OBJ)/myCar_DistanceManager_Automatic.o\
     $(P_OBJ)/myCar_Driver_Automatic.o\
     $(P_OBJ)/myCar_myBattery_myDrive.o\
     $(P_OBJ)/myCar_myCar_Automatic.o\
@@ -57,6 +43,24 @@ OBJECTS=\
     $(P_OBJ)/SystemLib_Nonlinears_Limiter_Impl.o\
     $(P_OBJ)/SystemLib_Transferfunction_Control_PID_Impl.o\
     $(P_OBJ)/SystemLib_Transferfunction_Control_PI_Impl.o\
+    $(P_OBJ)/PC_PC.l1.o\
+    $(P_OBJ)/myCar_myCar_Automatic.l1.o\
+    $(P_OBJ)/myCar_myDrive_Automatic.l1.o\
+    $(P_OBJ)/myCar_DistanceManager_Automatic.l1.o\
+    $(P_OBJ)/myCar_BatteryManager_Automatic.l1.o\
+    $(P_OBJ)/myCar_BatteryState_Automatic.l1.o\
+    $(P_OBJ)/myCar_myBattery_myDrive.l1.o\
+    $(P_OBJ)/resources_CarMessages_Automatic.l1.o\
+    $(P_OBJ)/myCar_CCF_Automatic.l1.o\
+    $(P_OBJ)/myCar_TargetVelocity_Automatic.l1.o\
+    $(P_OBJ)/SystemLib_Miscellaneous_EdgeRising_Impl.l1.o\
+    $(P_OBJ)/SystemLib_Transferfunction_Control_PID_Impl.l1.o\
+    $(P_OBJ)/myCar_SplitSignal_Automatic.l1.o\
+    $(P_OBJ)/myCar_CCFState_Automatic.l1.o\
+    $(P_OBJ)/SystemLib_Transferfunction_Control_PI_Impl.l1.o\
+    $(P_OBJ)/resources_DriverMessages_Automatic.l1.o\
+    $(P_OBJ)/myCar_Driver_Automatic.l1.o\
+    $(P_OBJ)/SystemLib_Miscellaneous_DeltaTimeService_Automatic.l1.o\
     $(P_OBJ)/etasConfigTask.o\
     $(P_OBJ)/etasL1Isr.o\
     $(P_OBJ)/etasL1Task.o\
@@ -99,54 +103,9 @@ L1_DEFINES=L1_PROTOCOL
 include $(P_TARGET)/build.mk
 
 #### COMPILE RULES ####
-$(P_OBJ)/PC_PC.l1.o: l1/PC_PC.l1.c $(P_OBJ) $(CC_OPTIONS_FILE)
-	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\l1\PC_PC.l1.c]
-	@$(CC) $(call CC_INPUT,$(P_OBJ)/PC_PC.l1.o l1/PC_PC.l1.c) $(CFLAGS)
-$(P_OBJ)/myCar_myCar_Automatic.l1.o: l1/myCar_myCar_Automatic.l1.c $(P_OBJ) $(CC_OPTIONS_FILE)
-	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\l1\myCar_myCar_Automatic.l1.c]
-	@$(CC) $(call CC_INPUT,$(P_OBJ)/myCar_myCar_Automatic.l1.o l1/myCar_myCar_Automatic.l1.c) $(CFLAGS)
-$(P_OBJ)/myCar_myDrive_Automatic.l1.o: l1/myCar_myDrive_Automatic.l1.c $(P_OBJ) $(CC_OPTIONS_FILE)
-	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\l1\myCar_myDrive_Automatic.l1.c]
-	@$(CC) $(call CC_INPUT,$(P_OBJ)/myCar_myDrive_Automatic.l1.o l1/myCar_myDrive_Automatic.l1.c) $(CFLAGS)
-$(P_OBJ)/myCar_myBattery_myDrive.l1.o: l1/myCar_myBattery_myDrive.l1.c $(P_OBJ) $(CC_OPTIONS_FILE)
-	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\l1\myCar_myBattery_myDrive.l1.c]
-	@$(CC) $(call CC_INPUT,$(P_OBJ)/myCar_myBattery_myDrive.l1.o l1/myCar_myBattery_myDrive.l1.c) $(CFLAGS)
-$(P_OBJ)/myCar_BatteryState_Automatic.l1.o: l1/myCar_BatteryState_Automatic.l1.c $(P_OBJ) $(CC_OPTIONS_FILE)
-	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\l1\myCar_BatteryState_Automatic.l1.c]
-	@$(CC) $(call CC_INPUT,$(P_OBJ)/myCar_BatteryState_Automatic.l1.o l1/myCar_BatteryState_Automatic.l1.c) $(CFLAGS)
-$(P_OBJ)/resources_CarMessages_Automatic.l1.o: l1/resources_CarMessages_Automatic.l1.c $(P_OBJ) $(CC_OPTIONS_FILE)
-	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\l1\resources_CarMessages_Automatic.l1.c]
-	@$(CC) $(call CC_INPUT,$(P_OBJ)/resources_CarMessages_Automatic.l1.o l1/resources_CarMessages_Automatic.l1.c) $(CFLAGS)
-$(P_OBJ)/myCar_CCF_Automatic.l1.o: l1/myCar_CCF_Automatic.l1.c $(P_OBJ) $(CC_OPTIONS_FILE)
-	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\l1\myCar_CCF_Automatic.l1.c]
-	@$(CC) $(call CC_INPUT,$(P_OBJ)/myCar_CCF_Automatic.l1.o l1/myCar_CCF_Automatic.l1.c) $(CFLAGS)
-$(P_OBJ)/myCar_TargetVelocity_Automatic.l1.o: l1/myCar_TargetVelocity_Automatic.l1.c $(P_OBJ) $(CC_OPTIONS_FILE)
-	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\l1\myCar_TargetVelocity_Automatic.l1.c]
-	@$(CC) $(call CC_INPUT,$(P_OBJ)/myCar_TargetVelocity_Automatic.l1.o l1/myCar_TargetVelocity_Automatic.l1.c) $(CFLAGS)
-$(P_OBJ)/SystemLib_Miscellaneous_EdgeRising_Impl.l1.o: l1/SystemLib_Miscellaneous_EdgeRising_Impl.l1.c $(P_OBJ) $(CC_OPTIONS_FILE)
-	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\l1\SystemLib_Miscellaneous_EdgeRising_Impl.l1.c]
-	@$(CC) $(call CC_INPUT,$(P_OBJ)/SystemLib_Miscellaneous_EdgeRising_Impl.l1.o l1/SystemLib_Miscellaneous_EdgeRising_Impl.l1.c) $(CFLAGS)
-$(P_OBJ)/SystemLib_Transferfunction_Control_PID_Impl.l1.o: l1/SystemLib_Transferfunction_Control_PID_Impl.l1.c $(P_OBJ) $(CC_OPTIONS_FILE)
-	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\l1\SystemLib_Transferfunction_Control_PID_Impl.l1.c]
-	@$(CC) $(call CC_INPUT,$(P_OBJ)/SystemLib_Transferfunction_Control_PID_Impl.l1.o l1/SystemLib_Transferfunction_Control_PID_Impl.l1.c) $(CFLAGS)
-$(P_OBJ)/myCar_SplitSignal_Automatic.l1.o: l1/myCar_SplitSignal_Automatic.l1.c $(P_OBJ) $(CC_OPTIONS_FILE)
-	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\l1\myCar_SplitSignal_Automatic.l1.c]
-	@$(CC) $(call CC_INPUT,$(P_OBJ)/myCar_SplitSignal_Automatic.l1.o l1/myCar_SplitSignal_Automatic.l1.c) $(CFLAGS)
-$(P_OBJ)/myCar_CCFState_Automatic.l1.o: l1/myCar_CCFState_Automatic.l1.c $(P_OBJ) $(CC_OPTIONS_FILE)
-	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\l1\myCar_CCFState_Automatic.l1.c]
-	@$(CC) $(call CC_INPUT,$(P_OBJ)/myCar_CCFState_Automatic.l1.o l1/myCar_CCFState_Automatic.l1.c) $(CFLAGS)
-$(P_OBJ)/SystemLib_Transferfunction_Control_PI_Impl.l1.o: l1/SystemLib_Transferfunction_Control_PI_Impl.l1.c $(P_OBJ) $(CC_OPTIONS_FILE)
-	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\l1\SystemLib_Transferfunction_Control_PI_Impl.l1.c]
-	@$(CC) $(call CC_INPUT,$(P_OBJ)/SystemLib_Transferfunction_Control_PI_Impl.l1.o l1/SystemLib_Transferfunction_Control_PI_Impl.l1.c) $(CFLAGS)
-$(P_OBJ)/resources_DriverMessages_Automatic.l1.o: l1/resources_DriverMessages_Automatic.l1.c $(P_OBJ) $(CC_OPTIONS_FILE)
-	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\l1\resources_DriverMessages_Automatic.l1.c]
-	@$(CC) $(call CC_INPUT,$(P_OBJ)/resources_DriverMessages_Automatic.l1.o l1/resources_DriverMessages_Automatic.l1.c) $(CFLAGS)
-$(P_OBJ)/myCar_Driver_Automatic.l1.o: l1/myCar_Driver_Automatic.l1.c $(P_OBJ) $(CC_OPTIONS_FILE)
-	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\l1\myCar_Driver_Automatic.l1.c]
-	@$(CC) $(call CC_INPUT,$(P_OBJ)/myCar_Driver_Automatic.l1.o l1/myCar_Driver_Automatic.l1.c) $(CFLAGS)
-$(P_OBJ)/SystemLib_Miscellaneous_DeltaTimeService_Automatic.l1.o: l1/SystemLib_Miscellaneous_DeltaTimeService_Automatic.l1.c $(P_OBJ) $(CC_OPTIONS_FILE)
-	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\l1\SystemLib_Miscellaneous_DeltaTimeService_Automatic.l1.c]
-	@$(CC) $(call CC_INPUT,$(P_OBJ)/SystemLib_Miscellaneous_DeltaTimeService_Automatic.l1.o l1/SystemLib_Miscellaneous_DeltaTimeService_Automatic.l1.c) $(CFLAGS)
+$(P_OBJ)/myCar_BatteryManager_Automatic.o: src/myCar_BatteryManager_Automatic.c $(P_OBJ) $(CC_OPTIONS_FILE)
+	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\src\myCar_BatteryManager_Automatic.c]
+	@$(CC) $(call CC_INPUT,$(P_OBJ)/myCar_BatteryManager_Automatic.o src/myCar_BatteryManager_Automatic.c) $(CFLAGS)
 $(P_OBJ)/myCar_BatteryState_Automatic.o: src/myCar_BatteryState_Automatic.c $(P_OBJ) $(CC_OPTIONS_FILE)
 	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\src\myCar_BatteryState_Automatic.c]
 	@$(CC) $(call CC_INPUT,$(P_OBJ)/myCar_BatteryState_Automatic.o src/myCar_BatteryState_Automatic.c) $(CFLAGS)
@@ -156,6 +115,9 @@ $(P_OBJ)/myCar_CCFState_Automatic.o: src/myCar_CCFState_Automatic.c $(P_OBJ) $(C
 $(P_OBJ)/myCar_CCF_Automatic.o: src/myCar_CCF_Automatic.c $(P_OBJ) $(CC_OPTIONS_FILE)
 	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\src\myCar_CCF_Automatic.c]
 	@$(CC) $(call CC_INPUT,$(P_OBJ)/myCar_CCF_Automatic.o src/myCar_CCF_Automatic.c) $(CFLAGS)
+$(P_OBJ)/myCar_DistanceManager_Automatic.o: src/myCar_DistanceManager_Automatic.c $(P_OBJ) $(CC_OPTIONS_FILE)
+	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\src\myCar_DistanceManager_Automatic.c]
+	@$(CC) $(call CC_INPUT,$(P_OBJ)/myCar_DistanceManager_Automatic.o src/myCar_DistanceManager_Automatic.c) $(CFLAGS)
 $(P_OBJ)/myCar_Driver_Automatic.o: src/myCar_Driver_Automatic.c $(P_OBJ) $(CC_OPTIONS_FILE)
 	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\src\myCar_Driver_Automatic.c]
 	@$(CC) $(call CC_INPUT,$(P_OBJ)/myCar_Driver_Automatic.o src/myCar_Driver_Automatic.c) $(CFLAGS)
@@ -201,6 +163,60 @@ $(P_OBJ)/SystemLib_Transferfunction_Control_PID_Impl.o: src/SystemLib_Transferfu
 $(P_OBJ)/SystemLib_Transferfunction_Control_PI_Impl.o: src/SystemLib_Transferfunction_Control_PI_Impl.c $(P_OBJ) $(CC_OPTIONS_FILE)
 	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\src\SystemLib_Transferfunction_Control_PI_Impl.c]
 	@$(CC) $(call CC_INPUT,$(P_OBJ)/SystemLib_Transferfunction_Control_PI_Impl.o src/SystemLib_Transferfunction_Control_PI_Impl.c) $(CFLAGS)
+$(P_OBJ)/PC_PC.l1.o: l1/PC_PC.l1.c $(P_OBJ) $(CC_OPTIONS_FILE)
+	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\l1\PC_PC.l1.c]
+	@$(CC) $(call CC_INPUT,$(P_OBJ)/PC_PC.l1.o l1/PC_PC.l1.c) $(CFLAGS)
+$(P_OBJ)/myCar_myCar_Automatic.l1.o: l1/myCar_myCar_Automatic.l1.c $(P_OBJ) $(CC_OPTIONS_FILE)
+	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\l1\myCar_myCar_Automatic.l1.c]
+	@$(CC) $(call CC_INPUT,$(P_OBJ)/myCar_myCar_Automatic.l1.o l1/myCar_myCar_Automatic.l1.c) $(CFLAGS)
+$(P_OBJ)/myCar_myDrive_Automatic.l1.o: l1/myCar_myDrive_Automatic.l1.c $(P_OBJ) $(CC_OPTIONS_FILE)
+	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\l1\myCar_myDrive_Automatic.l1.c]
+	@$(CC) $(call CC_INPUT,$(P_OBJ)/myCar_myDrive_Automatic.l1.o l1/myCar_myDrive_Automatic.l1.c) $(CFLAGS)
+$(P_OBJ)/myCar_DistanceManager_Automatic.l1.o: l1/myCar_DistanceManager_Automatic.l1.c $(P_OBJ) $(CC_OPTIONS_FILE)
+	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\l1\myCar_DistanceManager_Automatic.l1.c]
+	@$(CC) $(call CC_INPUT,$(P_OBJ)/myCar_DistanceManager_Automatic.l1.o l1/myCar_DistanceManager_Automatic.l1.c) $(CFLAGS)
+$(P_OBJ)/myCar_BatteryManager_Automatic.l1.o: l1/myCar_BatteryManager_Automatic.l1.c $(P_OBJ) $(CC_OPTIONS_FILE)
+	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\l1\myCar_BatteryManager_Automatic.l1.c]
+	@$(CC) $(call CC_INPUT,$(P_OBJ)/myCar_BatteryManager_Automatic.l1.o l1/myCar_BatteryManager_Automatic.l1.c) $(CFLAGS)
+$(P_OBJ)/myCar_BatteryState_Automatic.l1.o: l1/myCar_BatteryState_Automatic.l1.c $(P_OBJ) $(CC_OPTIONS_FILE)
+	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\l1\myCar_BatteryState_Automatic.l1.c]
+	@$(CC) $(call CC_INPUT,$(P_OBJ)/myCar_BatteryState_Automatic.l1.o l1/myCar_BatteryState_Automatic.l1.c) $(CFLAGS)
+$(P_OBJ)/myCar_myBattery_myDrive.l1.o: l1/myCar_myBattery_myDrive.l1.c $(P_OBJ) $(CC_OPTIONS_FILE)
+	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\l1\myCar_myBattery_myDrive.l1.c]
+	@$(CC) $(call CC_INPUT,$(P_OBJ)/myCar_myBattery_myDrive.l1.o l1/myCar_myBattery_myDrive.l1.c) $(CFLAGS)
+$(P_OBJ)/resources_CarMessages_Automatic.l1.o: l1/resources_CarMessages_Automatic.l1.c $(P_OBJ) $(CC_OPTIONS_FILE)
+	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\l1\resources_CarMessages_Automatic.l1.c]
+	@$(CC) $(call CC_INPUT,$(P_OBJ)/resources_CarMessages_Automatic.l1.o l1/resources_CarMessages_Automatic.l1.c) $(CFLAGS)
+$(P_OBJ)/myCar_CCF_Automatic.l1.o: l1/myCar_CCF_Automatic.l1.c $(P_OBJ) $(CC_OPTIONS_FILE)
+	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\l1\myCar_CCF_Automatic.l1.c]
+	@$(CC) $(call CC_INPUT,$(P_OBJ)/myCar_CCF_Automatic.l1.o l1/myCar_CCF_Automatic.l1.c) $(CFLAGS)
+$(P_OBJ)/myCar_TargetVelocity_Automatic.l1.o: l1/myCar_TargetVelocity_Automatic.l1.c $(P_OBJ) $(CC_OPTIONS_FILE)
+	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\l1\myCar_TargetVelocity_Automatic.l1.c]
+	@$(CC) $(call CC_INPUT,$(P_OBJ)/myCar_TargetVelocity_Automatic.l1.o l1/myCar_TargetVelocity_Automatic.l1.c) $(CFLAGS)
+$(P_OBJ)/SystemLib_Miscellaneous_EdgeRising_Impl.l1.o: l1/SystemLib_Miscellaneous_EdgeRising_Impl.l1.c $(P_OBJ) $(CC_OPTIONS_FILE)
+	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\l1\SystemLib_Miscellaneous_EdgeRising_Impl.l1.c]
+	@$(CC) $(call CC_INPUT,$(P_OBJ)/SystemLib_Miscellaneous_EdgeRising_Impl.l1.o l1/SystemLib_Miscellaneous_EdgeRising_Impl.l1.c) $(CFLAGS)
+$(P_OBJ)/SystemLib_Transferfunction_Control_PID_Impl.l1.o: l1/SystemLib_Transferfunction_Control_PID_Impl.l1.c $(P_OBJ) $(CC_OPTIONS_FILE)
+	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\l1\SystemLib_Transferfunction_Control_PID_Impl.l1.c]
+	@$(CC) $(call CC_INPUT,$(P_OBJ)/SystemLib_Transferfunction_Control_PID_Impl.l1.o l1/SystemLib_Transferfunction_Control_PID_Impl.l1.c) $(CFLAGS)
+$(P_OBJ)/myCar_SplitSignal_Automatic.l1.o: l1/myCar_SplitSignal_Automatic.l1.c $(P_OBJ) $(CC_OPTIONS_FILE)
+	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\l1\myCar_SplitSignal_Automatic.l1.c]
+	@$(CC) $(call CC_INPUT,$(P_OBJ)/myCar_SplitSignal_Automatic.l1.o l1/myCar_SplitSignal_Automatic.l1.c) $(CFLAGS)
+$(P_OBJ)/myCar_CCFState_Automatic.l1.o: l1/myCar_CCFState_Automatic.l1.c $(P_OBJ) $(CC_OPTIONS_FILE)
+	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\l1\myCar_CCFState_Automatic.l1.c]
+	@$(CC) $(call CC_INPUT,$(P_OBJ)/myCar_CCFState_Automatic.l1.o l1/myCar_CCFState_Automatic.l1.c) $(CFLAGS)
+$(P_OBJ)/SystemLib_Transferfunction_Control_PI_Impl.l1.o: l1/SystemLib_Transferfunction_Control_PI_Impl.l1.c $(P_OBJ) $(CC_OPTIONS_FILE)
+	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\l1\SystemLib_Transferfunction_Control_PI_Impl.l1.c]
+	@$(CC) $(call CC_INPUT,$(P_OBJ)/SystemLib_Transferfunction_Control_PI_Impl.l1.o l1/SystemLib_Transferfunction_Control_PI_Impl.l1.c) $(CFLAGS)
+$(P_OBJ)/resources_DriverMessages_Automatic.l1.o: l1/resources_DriverMessages_Automatic.l1.c $(P_OBJ) $(CC_OPTIONS_FILE)
+	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\l1\resources_DriverMessages_Automatic.l1.c]
+	@$(CC) $(call CC_INPUT,$(P_OBJ)/resources_DriverMessages_Automatic.l1.o l1/resources_DriverMessages_Automatic.l1.c) $(CFLAGS)
+$(P_OBJ)/myCar_Driver_Automatic.l1.o: l1/myCar_Driver_Automatic.l1.c $(P_OBJ) $(CC_OPTIONS_FILE)
+	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\l1\myCar_Driver_Automatic.l1.c]
+	@$(CC) $(call CC_INPUT,$(P_OBJ)/myCar_Driver_Automatic.l1.o l1/myCar_Driver_Automatic.l1.c) $(CFLAGS)
+$(P_OBJ)/SystemLib_Miscellaneous_DeltaTimeService_Automatic.l1.o: l1/SystemLib_Miscellaneous_DeltaTimeService_Automatic.l1.c $(P_OBJ) $(CC_OPTIONS_FILE)
+	echo compiling [C:\Users\fiery\ETAS\ASCET-DEVELOPER-7.7.0\workspace\ASCETProjektDHBWSoSe23\MyCCF_CGen\l1\SystemLib_Miscellaneous_DeltaTimeService_Automatic.l1.c]
+	@$(CC) $(call CC_INPUT,$(P_OBJ)/SystemLib_Miscellaneous_DeltaTimeService_Automatic.l1.o l1/SystemLib_Miscellaneous_DeltaTimeService_Automatic.l1.c) $(CFLAGS)
 $(P_OBJ)/etasConfigTask.o: C:/ETAS/ASCET-DEVELOPER7.7/configuration/org.eclipse.osgi/54/0/.cp/platform/code/etasConfigTask.c $(P_OBJ) $(CC_OPTIONS_FILE)
 	echo compiling [C:\ETAS\ASCET-DEVELOPER7.7\configuration\org.eclipse.osgi\54\0\.cp\platform\code\etasConfigTask.c]
 	@$(CC) $(call CC_INPUT,$(P_OBJ)/etasConfigTask.o C:/ETAS/ASCET-DEVELOPER7.7/configuration/org.eclipse.osgi/54/0/.cp/platform/code/etasConfigTask.c) $(CFLAGS)

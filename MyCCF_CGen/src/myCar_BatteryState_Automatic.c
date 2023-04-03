@@ -79,7 +79,14 @@ void myCar_BatteryState_Automatic_batteryStateStatemachineTrigger ( const struct
             sm_VAL = BatteryNormal;
             break;
          } /* end if */
-         powerOverride_VAL = powerInput_VAL * 0.055F;
+         if (powerInput_VAL >= 5.5F)
+         {
+            powerOverride_VAL = 5.5F;
+         }
+         else
+         {
+            powerOverride_VAL = powerInput_VAL;
+         } /* end if */
          break;
       case BatteryNormal:
       default:

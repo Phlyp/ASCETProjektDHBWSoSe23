@@ -39,7 +39,7 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier SystemLib.Miscellaneous.DeltaTimeService.deltaT at (231, 275) {
+	simpleIdentifier SystemLib.Miscellaneous.DeltaTimeService.deltaT at (291, 255) {
 		label at (-30, -1)
 		inPin outPin {
 			connection_43
@@ -48,7 +48,7 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	multiplication at (321, 286) {
+	multiplication at (381, 266) {
 		inPin connection_43 {
 			bendpoints (30, 0), (30, 10)
 		}
@@ -59,7 +59,7 @@ blockdiagramSpecification Main {
 			connection_16
 		}
 	}
-	literal unit resources.s "4.0" at (241, 313) size (49, 0) {
+	literal unit resources.s "1.0" at (301, 293) size (49, 0) {
 		outPin {
 			connection_42
 		}
@@ -70,7 +70,7 @@ blockdiagramSpecification Main {
 			argumentPin powerCtrl at (left, 3) connection_3
 			argumentPin brakeCtrl at (left, 6) connection_1
 			argumentPin mydt at (bottom, 31) connection_16 {
-				bendpoints (110, 0)
+				bendpoints (50, 0)
 			}
 			argumentPin myg at (bottom, 23) connection_11 {
 				bendpoints (110, 0)
@@ -89,7 +89,7 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	simpleIdentifier mass at (81, 275) {
+	simpleIdentifier mass at (71, 265) {
 		label at (0, -1)
 		outPin sequenceCall {
 			inPin

@@ -1,0 +1,149 @@
+classType myCar.BatteryManager
+blockdiagramSpecification Main {
+	methodBody calc_power {
+		outPin active {
+			connection_15, connection_17, connection_12, connection_2, connection_6, connection_8, connection_22
+		}
+	}
+	addition at (151, 86) {
+		inPin connection_20
+		inPin connection_19
+		outPin {
+			connection_3
+		}
+	}
+	complexIdentifier BatteryState_instance at (541, 71) size (14, 8) {
+		label at (0, 1)
+		methodCall myCar.BatteryState.batteryStateStatemachineTrigger {
+			methodVoidPin at (top, 5) sequenceCall at (-54, -30) {
+				inPin connection_2
+			}
+		}
+		elementCall (myCar.BatteryState.noRecupPossible) {
+			returnPin at (right, 0) {
+				connection_7
+			}
+			sequenceCall at (0, 0) {
+				inPin
+			}
+		}
+		elementCall (myCar.BatteryState.recupMult) {
+			returnPin at (right, 3) {
+				connection_9
+			}
+			sequenceCall at (0, 0) {
+				inPin
+			}
+		}
+		elementCall (myCar.BatteryState.powerOverride) {
+			returnPin at (right, 5) {
+				connection_23
+			}
+			sequenceCall at (0, 0) {
+				inPin
+			}
+		}
+		elementCall (myCar.BatteryState.powerInput) {
+			argumentPin at (left, 0) connection_13 {
+				bendpoints (50, 0), (50, 30), (90, 30)
+			}
+			sequenceCall at (-50, -34) {
+				inPin connection_12
+			}
+		}
+		elementCall (myCar.BatteryState.battery) {
+			argumentPin at (left, 3) connection_18 {
+				bendpoints (70, 0)
+			}
+			sequenceCall at (-60, -28) {
+				inPin connection_17
+			}
+		}
+	}
+	methodArgumentIdentifier calc_power.powerCtrl at (401, 35) {
+		label at (0, -31)
+		outPin {
+			connection_13
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	complexIdentifier myBattery_instance at (231, 91) size (14, 8) {
+		label at (0, 1)
+		methodCall myCar.myBattery.get_battery {
+			argumentPin momentum at (left, 0) connection_3
+			argumentPin ds at (left, 6) connection_21
+			returnPin at (right, 0) {
+				connection_16
+			}
+			sequenceCall at (0, 6) {
+				inPin
+			}
+		}
+	}
+	simpleIdentifier battery at (411, 95) {
+		label at (0, -1)
+		inPin connection_16
+		outPin {
+			connection_18
+		}
+		sequenceCall at (-20, -14) {
+			inPin connection_15
+		}
+	}
+	simpleIdentifier recupMult at (731, 95) {
+		label at (0, 9)
+		inPin connection_9 {
+			bendpoints (40, 0)
+		}
+		outPin sequenceCall at (-10, -14) {
+			inPin connection_8
+		}
+	}
+	simpleIdentifier noRecupPossible at (731, 35) {
+		label at (0, -1)
+		inPin connection_7 {
+			bendpoints (30, 0), (30, -30)
+		}
+		outPin sequenceCall at (-10, -14) {
+			inPin connection_6
+		}
+	}
+	methodArgumentIdentifier calc_power.momentum at (51, 85) {
+		label at (0, -1)
+		outPin {
+			connection_20
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	methodArgumentIdentifier calc_power.recup_momentum at (51, 105) {
+		label at (0, -1)
+		outPin {
+			connection_19
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	methodArgumentIdentifier calc_power.ds at (121, 155) {
+		label at (0, -1)
+		outPin {
+			connection_21
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	return at (731, 145) {
+		label at (0, 0)
+		inPin connection_23 {
+			bendpoints (10, 0), (10, 20)
+		}
+		sequenceCall at (-10, -14) {
+			inPin connection_22
+		}
+	}
+}

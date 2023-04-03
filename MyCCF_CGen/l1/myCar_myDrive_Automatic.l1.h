@@ -8,30 +8,21 @@
  ********************************************************************************/
 #include "a_basdef.h"
 #include "myCar_myDrive_Automatic.h"
-#include "myCar_myBattery_myDrive.l1.h"
-#include "myCar_BatteryState_Automatic.l1.h"
+#include "myCar_DistanceManager_Automatic.l1.h"
+#include "myCar_BatteryManager_Automatic.l1.h"
 
 /* local variables object structure */
 struct L1_myCar_myDrive_Automatic_Obj {
 	ASDObjectHeader objectHeader;
-	struct L1_myCar_BatteryState_Automatic_Obj* BatteryState_instance;
-	struct L1_myCar_myBattery_myDrive_Obj* myBattery_instance;
+	struct L1_myCar_BatteryManager_Automatic_Obj* BatteryManager_instance;
+	struct L1_myCar_DistanceManager_Automatic_Obj* DistanceManager_instance;
 	charTable1Wrapper_Obj* AirFriction;
 	charTable1Wrapper_Obj* BrakeMomentum;
 	columnDirCharTable2Wrapper_Obj* EngineMomentum;
-	charTable1Wrapper_Obj* Landscape;
-	scalarWrapper_Obj* TrackSize;
 	scalarWrapper_Obj* battery;
-	scalarWrapper_Obj* batteryOn;
-	charTable1Wrapper_Obj* curve_brake_recuperation_table;
-	scalarWrapper_Obj* dh;
+	charTable1Wrapper_Obj* cbrt;
 	scalarWrapper_Obj* dist;
 	scalarWrapper_Obj* ds;
-	scalarWrapper_Obj* e_kwh;
-	scalarWrapper_Obj* energy;
-	scalarWrapper_Obj* force;
-	scalarWrapper_Obj* h;
-	scalarWrapper_Obj* mass;
 	scalarWrapper_Obj* momentum;
 	scalarWrapper_Obj* noRecupPossible;
 	scalarWrapper_Obj* power;

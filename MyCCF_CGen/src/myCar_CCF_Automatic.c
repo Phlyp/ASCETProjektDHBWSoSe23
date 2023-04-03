@@ -313,8 +313,8 @@ void myCar_CCF_Automatic_calc (void)
    myCar_CCF_RAM.CCFS.bra = resources_DriverMessages_brake__myCar_CCF_Automatic_calc;
    myCar_CCFState_Automatic_cCFStateStatemachineTrigger(CCFS_REF);
    resources_CarMessages_power__myCar_CCF_Automatic_calc = myCar_CCF_RAM.CCFS.pw;
-   resources_CarMessages_recuperation__myCar_CCF_Automatic_calc = myCar_CCF_RAM.CCFS.br;
    resources_DriverMessages_display__myCar_CCF_Automatic_calc = myCar_CCF_RAM.CCFS.on;
+   resources_CarMessages_recuperation__myCar_CCF_Automatic_calc = myCar_CCF_RAM.CCFS.br;
    /* send messages implicitly */
    {
       DisableAllInterrupts();

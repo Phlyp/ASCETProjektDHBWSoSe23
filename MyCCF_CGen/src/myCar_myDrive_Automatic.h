@@ -20,8 +20,8 @@
 # error NOT COMPLIANT (< compliance level 5) VERSION OF esdl.h FOUND; To fix that, delete the old headers (esdl_<...>.h) in include folder and restart build again to get the new version of those files.
 #endif
 #include "chartab.h"
-#include "myCar_BatteryState_Automatic.h"
-#include "myCar_myBattery_myDrive.h"
+#include "myCar_BatteryManager_Automatic.h"
+#include "myCar_DistanceManager_Automatic.h"
 
 
 /******************************************************************************
@@ -30,14 +30,12 @@
  * memory class:.................................'CAL_MEM'
  * ---------------------------------------------------------------------------*/
 struct myCar_myDrive_Automatic_CAL_MEM_SUBSTRUCT {
-   float32 TrackSize;
-   float32 mass;
-   struct myCar_myBattery_myDrive_CAL_MEM_SUBSTRUCT myBattery_instance;
+   struct myCar_BatteryManager_Automatic_CAL_MEM_SUBSTRUCT BatteryManager_instance;
+   struct myCar_DistanceManager_Automatic_CAL_MEM_SUBSTRUCT DistanceManager_instance;
    struct CharTable1_real32_6_real32_TYPE AirFriction;
    struct CharTable1_real32_6_real32_TYPE BrakeMomentum;
    struct CharTable2_real32_6_real32_6_real32_TYPE EngineMomentum;
-   struct CharTable1_real32_20_real32_TYPE Landscape;
-   struct CharTable1_real32_3_real32_TYPE curve_brake_recuperation_table;
+   struct CharTable1_real32_3_real32_TYPE cbrt;
 };
 /* ----------------------------------------------------------------------------
  * END: DEFINITION OF MEMORY CLASS STRUCTURE FOR CLASS 'myCar_myDrive_Automatic'
@@ -51,23 +49,17 @@ struct myCar_myDrive_Automatic_CAL_MEM_SUBSTRUCT {
  * ---------------------------------------------------------------------------*/
 struct myCar_myDrive_Automatic_RAM_SUBSTRUCT {
    float32 battery;
-   float32 dh;
    float32 dist;
    float32 ds;
-   float32 e_kwh;
-   float32 energy;
-   float32 force;
-   float32 h;
    float32 momentum;
    float32 power;
    float32 recupMult;
    float32 recup_momentum;
    float32 totalDist;
    float32 v;
-   boolean batteryOn;
    boolean noRecupPossible;
-   struct myCar_BatteryState_Automatic_RAM_SUBSTRUCT BatteryState_instance;
-   struct myCar_myBattery_myDrive_RAM_SUBSTRUCT myBattery_instance;
+   struct myCar_BatteryManager_Automatic_RAM_SUBSTRUCT BatteryManager_instance;
+   struct myCar_DistanceManager_Automatic_RAM_SUBSTRUCT DistanceManager_instance;
 };
 /* ----------------------------------------------------------------------------
  * END: DEFINITION OF MEMORY CLASS STRUCTURE FOR CLASS 'myCar_myDrive_Automatic'
@@ -82,8 +74,8 @@ struct myCar_myDrive_Automatic_RAM_SUBSTRUCT {
 struct myCar_myDrive_Automatic {
    struct myCar_myDrive_Automatic_CAL_MEM_SUBSTRUCT * myCar_myDrive_Automatic_CAL_MEM;
    struct myCar_myDrive_Automatic_RAM_SUBSTRUCT * myCar_myDrive_Automatic_RAM;
-   struct myCar_BatteryState_Automatic BatteryState_instance;
-   struct myCar_myBattery_myDrive myBattery_instance;
+   struct myCar_BatteryManager_Automatic BatteryManager_instance;
+   struct myCar_DistanceManager_Automatic DistanceManager_instance;
 };
 /* ----------------------------------------------------------------------------
  * END: DEFINITION OF MAIN STRUCTURE FOR CLASS 'myCar_myDrive_Automatic'

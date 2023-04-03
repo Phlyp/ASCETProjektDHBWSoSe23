@@ -2,7 +2,7 @@ classType myCar.CCF
 blockdiagramSpecification Main {
 	methodBody calc {
 		outPin active {
-			connection_14, connection_16, connection_23, connection_25, connection_27, connection_29, connection_64, connection_116, connection_53, connection_101, connection_49, connection_51, connection_44, connection_45, connection_84, connection_59
+			connection_14, connection_16, connection_23, connection_25, connection_27, connection_29, connection_64, connection_116, connection_53, connection_101, connection_49, connection_51, connection_44, connection_45, connection_59, connection_129
 		}
 	}
 	simpleIdentifier resources.DriverMessages.on at (21, 165) {
@@ -219,7 +219,7 @@ blockdiagramSpecification Main {
 		}
 		elementCall (myCar.CCFState.br) {
 			returnPin at (right, 3) {
-				connection_85
+				connection_130
 			}
 			sequenceCall {
 				inPin
@@ -267,7 +267,7 @@ blockdiagramSpecification Main {
 		elseControlFlowOutPin {
 			connection_68
 		}
-		sequenceCall {
+		sequenceCall at (-30, 30) {
 			inPin connection_64
 		}
 	}
@@ -308,19 +308,11 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier resources.CarMessages.brake at (831, 365) {
+	simpleIdentifier resources.CarMessages.recuperation at (831, 365) {
 		label at (0, -1)
-		inPin sequenceCall at (-10, -14) {
-			inPin
-		}
-	}
-	simpleIdentifier resources.CarMessages.recuperation at (911, 365) {
-		label at (0, -1)
-		inPin connection_85 {
-			bendpoints (30, 0), (30, -10), (110, -10), (110, 0)
-		}
-		sequenceCall {
-			inPin connection_84
+		inPin connection_130
+		sequenceCall at (-10, -14) {
+			inPin connection_129
 		}
 	}
 	simpleIdentifier resources.CarMessages.v at (411, 45) {
@@ -373,7 +365,7 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier useSilly at (931, 155) {
+	simpleIdentifier useSilly at (931, 185) {
 		label at (0, -1)
 		outPin {
 			connection_103
@@ -387,7 +379,7 @@ blockdiagramSpecification Main {
 			bendpoints (30, 0), (30, 50), (-80, 50), (-80, 160)
 		}
 		inPin CASE_CONDITION connection_103 {
-			bendpoints (0, -30), (-60, -30)
+			bendpoints (0, -20), (-60, -20)
 		}
 		inPin connection_99 {
 			bendpoints (20, 0), (20, -20)

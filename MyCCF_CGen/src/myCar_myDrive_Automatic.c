@@ -24,23 +24,19 @@
 
 #define AirFriction_REF (&(self->myCar_myDrive_Automatic_CAL_MEM->AirFriction))
 #define battery_VAL (self->myCar_myDrive_Automatic_RAM->battery)
-#define BatteryState_instance_REF (&(self->BatteryState_instance))
+#define BatteryManager_instance_REF (&(self->BatteryManager_instance))
 #define BrakeMomentum_REF (&(self->myCar_myDrive_Automatic_CAL_MEM->BrakeMomentum))
-#define curve_brake_recuperation_table_REF (&(self->myCar_myDrive_Automatic_CAL_MEM->curve_brake_recuperation_table))
-#define dh_VAL (self->myCar_myDrive_Automatic_RAM->dh)
+#define cbrt_REF (&(self->myCar_myDrive_Automatic_CAL_MEM->cbrt))
 #define dist_VAL (self->myCar_myDrive_Automatic_RAM->dist)
+#define DistanceManager_instance_REF (&(self->DistanceManager_instance))
 #define ds_VAL (self->myCar_myDrive_Automatic_RAM->ds)
 #define EngineMomentum_REF (&(self->myCar_myDrive_Automatic_CAL_MEM->EngineMomentum))
-#define h_VAL (self->myCar_myDrive_Automatic_RAM->h)
-#define Landscape_REF (&(self->myCar_myDrive_Automatic_CAL_MEM->Landscape))
 #define momentum_VAL (self->myCar_myDrive_Automatic_RAM->momentum)
-#define myBattery_instance_REF (&(self->myBattery_instance))
 #define noRecupPossible_VAL (self->myCar_myDrive_Automatic_RAM->noRecupPossible)
 #define power_VAL (self->myCar_myDrive_Automatic_RAM->power)
 #define recup_momentum_VAL (self->myCar_myDrive_Automatic_RAM->recup_momentum)
 #define recupMult_VAL (self->myCar_myDrive_Automatic_RAM->recupMult)
 #define totalDist_VAL (self->myCar_myDrive_Automatic_RAM->totalDist)
-#define TrackSize_VAL (self->myCar_myDrive_Automatic_CAL_MEM->TrackSize)
 #define v_VAL (self->myCar_myDrive_Automatic_RAM->v)
 
 
@@ -66,44 +62,29 @@ void myCar_myDrive_Automatic_move (
    )
 {
    v_VAL
-      = ((ESDL_Linear_CharTable1_getAt_r32r32((BrakeMomentum_REF)->xSize, (BrakeMomentum_REF)->xDist, (BrakeMomentum_REF)->values, brakeCtrl) + momentum_VAL + ESDL_Linear_CharTable1_getAt_r32r32((AirFriction_REF)->xSize, (AirFriction_REF)->xDist, (AirFriction_REF)->values, v_VAL) + recup_momentum_VAL + (myg * (((ds_VAL == 0.0F) ? dh_VAL : (dh_VAL / ds_VAL))) * 9.81F)) * mydt * 3.6F) + v_VAL;
+      = ((ESDL_Linear_CharTable1_getAt_r32r32((BrakeMomentum_REF)->xSize, (BrakeMomentum_REF)->xDist, (BrakeMomentum_REF)->values, brakeCtrl) + momentum_VAL + ESDL_Linear_CharTable1_getAt_r32r32((AirFriction_REF)->xSize, (AirFriction_REF)->xDist, (AirFriction_REF)->values, v_VAL) + recup_momentum_VAL + myCar_DistanceManager_Automatic_move(DistanceManager_instance_REF, mydt, v_VAL, myg)) * mydt * 3.6F) + v_VAL;
    if (v_VAL < 0.0F)
    {
       v_VAL = 0.0F;
    } /* end if */
-   ds_VAL = v_VAL * mydt * 2.77777777777778e-1F;
-   if (ds_VAL > 0.001F)
-   {
-      dist_VAL = ds_VAL + dist_VAL;
-   }
-   else
-   {
-      ds_VAL = 0.001F;
-   } /* end if */
-   if (dist_VAL > TrackSize_VAL)
-   {
-      dist_VAL = 0.0F;
-   } /* end if */
-   totalDist_VAL = ds_VAL + totalDist_VAL;
-   dh_VAL
-      = h_VAL - ESDL_Linear_CharTable1_getAt_r32r32((Landscape_REF)->xSize, (Landscape_REF)->xDist, (Landscape_REF)->values, dist_VAL);
-   h_VAL
-      = ESDL_Linear_CharTable1_getAt_r32r32((Landscape_REF)->xSize, (Landscape_REF)->xDist, (Landscape_REF)->values, dist_VAL);
    momentum_VAL
       = ESDL_Linear_CharTable2_getAt_r32r32r32((EngineMomentum_REF)->xSize, (EngineMomentum_REF)->xDist, (EngineMomentum_REF)->ySize, (EngineMomentum_REF)->yDist, (EngineMomentum_REF)->values, power_VAL, v_VAL);
    recup_momentum_VAL
-      = ESDL_Linear_CharTable1_getAt_r32r32((curve_brake_recuperation_table_REF)->xSize, (curve_brake_recuperation_table_REF)->xDist, (curve_brake_recuperation_table_REF)->values, v_VAL) * recupCtrl * recupMult_VAL * 0.01F;
-   battery_VAL
-      = myCar_myBattery_myDrive_get_battery(myBattery_instance_REF, momentum_VAL + recup_momentum_VAL, ds_VAL);
-   self->BatteryState_instance.myCar_BatteryState_Automatic_RAM->battery = battery_VAL;
-   self->BatteryState_instance.myCar_BatteryState_Automatic_RAM->powerInput = powerCtrl;
-   myCar_BatteryState_Automatic_batteryStateStatemachineTrigger(BatteryState_instance_REF);
-   recupMult_VAL
-      = self->BatteryState_instance.myCar_BatteryState_Automatic_RAM->recupMult;
-   noRecupPossible_VAL
-      = self->BatteryState_instance.myCar_BatteryState_Automatic_RAM->noRecupPossible;
+      = ESDL_Linear_CharTable1_getAt_r32r32((cbrt_REF)->xSize, (cbrt_REF)->xDist, (cbrt_REF)->values, v_VAL) * recupCtrl * recupMult_VAL * 0.01F;
+   dist_VAL
+      = self->DistanceManager_instance.myCar_DistanceManager_Automatic_RAM->dist;
+   totalDist_VAL
+      = self->DistanceManager_instance.myCar_DistanceManager_Automatic_RAM->totalDist;
+   ds_VAL
+      = self->DistanceManager_instance.myCar_DistanceManager_Automatic_RAM->ds;
    power_VAL
-      = self->BatteryState_instance.myCar_BatteryState_Automatic_RAM->powerOverride;
+      = myCar_BatteryManager_Automatic_calc_power(BatteryManager_instance_REF, powerCtrl, momentum_VAL, recup_momentum_VAL, ds_VAL);
+   recupMult_VAL
+      = self->BatteryManager_instance.myCar_BatteryManager_Automatic_RAM->recupMult;
+   noRecupPossible_VAL
+      = self->BatteryManager_instance.myCar_BatteryManager_Automatic_RAM->noRecupPossible;
+   battery_VAL
+      = self->BatteryManager_instance.myCar_BatteryManager_Automatic_RAM->battery;
 }
 /* ----------------------------------------------------------------------------
  * END: DEFINITION OF METHOD 'myCar_myDrive_Automatic_move'
