@@ -14,8 +14,8 @@ P_OBJ=obj
 
 P_ADDITIONAL_INCLUDE=$(pathcnv SN,C:/Users/fiery/ETAS/ASCET-DEVELOPER-7.7.0/workspace/ASCETProjektDHBWSoSe23/MyCCF_CGen/include\
     C:/Users/fiery/ETAS/ASCET-DEVELOPER-7.7.0/workspace/ASCETProjektDHBWSoSe23/MyCCF_CGen/src\
-    C:/Users/fiery/ETAS/ASCET-DEVELOPER-7.7.0/workspace/ASCETProjektDHBWSoSe23/MyCCF_CGen/l1\
     C:/Users/fiery/ETAS/ASCET-DEVELOPER-7.7.0/workspace/ASCETProjektDHBWSoSe23/MyCCF_CGen/platform\
+    C:/Users/fiery/ETAS/ASCET-DEVELOPER-7.7.0/workspace/ASCETProjektDHBWSoSe23/MyCCF_CGen/l1\
     C:/ETAS/ASCET-DEVELOPER7.7/plugins/com.etas.rta_osek_1.0.4/rta/VRTA/inc\
     C:/ETAS/ASCET-DEVELOPER7.7/configuration/org.eclipse.osgi/54/0/.cp/platform/rta_osek\
     C:/Users/fiery/ETAS/ASCET-DEVELOPER-7.7.0/workspace/ASCETProjektDHBWSoSe23/MyCCF_CGen/platform)
